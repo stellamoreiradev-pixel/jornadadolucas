@@ -217,6 +217,133 @@ nav{display:flex;gap:4px}
 #sr{display:none}
 .fogbg{left:0;right:0}
 }
+
+/* ── CUSTOM TASKS ── */
+.ctask-divider{display:flex;align-items:center;gap:10px;margin:20px 0 12px}
+.ctask-divider-line{flex:1;height:1px;background:var(--bs)}
+.ctask-divider-label{font-family:var(--ft);font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:.14em;white-space:nowrap}
+.ctask-add-btn{display:flex;align-items:center;gap:7px;padding:9px 14px;background:var(--surface);border:1px dashed var(--bf);border-radius:2px;cursor:pointer;transition:border-color .2s,background .2s;font-family:var(--ft);font-size:11px;color:var(--t4);letter-spacing:.08em;text-transform:uppercase;width:100%;justify-content:center;margin-bottom:6px}
+.ctask-add-btn:hover{border-color:var(--t4);background:rgba(26,122,110,.06)}
+.ctask-add-icon{font-size:16px;line-height:1;color:var(--t4)}
+.mi.custom{border-left:3px solid var(--f4)}
+.mi.custom::before{background:var(--f4)}
+.mi.custom.done{border-left-color:var(--f7)}
+.mi-actions{display:flex;flex-direction:column;gap:4px;align-self:center;flex-shrink:0;margin-left:4px}
+.mi-act-btn{background:none;border:none;cursor:pointer;font-size:13px;color:var(--tm);padding:2px 4px;border-radius:2px;transition:color .15s,background .15s;line-height:1}
+.mi-act-btn:hover{color:var(--tp);background:rgba(255,255,255,.05)}
+.effort-badge{display:inline-block;padding:2px 7px;border-radius:1px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;margin-top:3px;font-family:var(--fm);border:1px solid}
+.eff-leve{color:var(--t4);border-color:rgba(42,158,142,.25);background:rgba(42,158,142,.06)}
+.eff-normal{color:var(--a3);border-color:rgba(240,152,32,.25);background:rgba(240,152,32,.06)}
+.eff-intenso{color:#e87050;border-color:rgba(232,112,80,.25);background:rgba(232,112,80,.06)}
+.mi.paused{opacity:.4;border-left-color:var(--tm) !important}
+.mi.paused .mn{font-style:italic;color:var(--tm)}
+
+/* ── MODAL ── */
+#ctask-modal{position:fixed;inset:0;background:rgba(10,13,15,.85);z-index:800;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+#ctask-modal.show{display:flex}
+.ctask-modal-inner{background:var(--card);border:1px solid var(--bf);border-radius:3px;padding:28px 28px 24px;width:100%;max-width:440px;position:relative}
+.ctask-modal-inner::before{content:'';position:absolute;inset:0;border-radius:3px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(26,122,110,.08) 0%,transparent 60%);pointer-events:none}
+.cm-title{font-family:var(--ft);font-size:16px;color:var(--tp);letter-spacing:.06em;margin-bottom:4px}
+.cm-sub{font-size:13px;color:var(--tm);font-style:italic;margin-bottom:22px;line-height:1.5}
+.cm-label{font-family:var(--ft);font-size:10px;color:var(--ts);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:6px;margin-top:16px}
+.cm-label:first-of-type{margin-top:0}
+.cm-input{width:100%;background:var(--surface);border:1px solid var(--bf);border-radius:2px;padding:9px 13px;font-family:var(--fb);font-size:16px;color:var(--tp);outline:none;transition:border-color .2s}
+.cm-input:focus{border-color:var(--t5)}
+.cm-pills{display:flex;gap:7px;flex-wrap:wrap}
+.cm-pill{padding:6px 13px;background:var(--surface);border:1px solid var(--bs);border-radius:2px;font-family:var(--fm);font-size:11px;color:var(--ts);cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.cm-pill:hover{border-color:var(--bf);color:var(--tp)}
+.cm-pill.on{background:var(--t9);border-color:var(--t5);color:var(--t3)}
+.cm-pill.eff-on-leve{background:rgba(42,158,142,.1);border-color:var(--t5);color:var(--t3)}
+.cm-pill.eff-on-normal{background:rgba(240,152,32,.1);border-color:var(--a4);color:var(--a3)}
+.cm-pill.eff-on-intenso{background:rgba(232,112,80,.1);border-color:#c05030;color:#e87050}
+.cm-xp-preview{margin-top:14px;padding:10px 14px;background:var(--raised);border:1px solid var(--bs);border-radius:2px;font-family:var(--fm);font-size:12px;color:var(--ts);font-style:italic}
+.cm-xp-preview span{color:var(--a3);font-weight:500}
+.cm-footer{display:flex;gap:10px;margin-top:22px}
+.cm-btn-cancel{flex:1;padding:10px;background:none;border:1px solid var(--bs);border-radius:2px;color:var(--ts);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:border-color .2s}
+.cm-btn-cancel:hover{border-color:var(--bf)}
+.cm-btn-save{flex:2;padding:10px;background:var(--t9);border:1px solid var(--t7);border-radius:2px;color:var(--t3);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.cm-btn-save:hover{background:var(--t7)}
+.cm-btn-save:disabled{opacity:.35;cursor:not-allowed}
+
+
+/* ── CONSEQUENCE SYSTEM ── */
+#fog-consequence{position:fixed;inset:0;z-index:600;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px);background:rgba(10,13,15,.82)}
+#fog-consequence.show{display:flex}
+.fcons-inner{max-width:460px;width:100%;background:var(--card);border:1px solid rgba(144,112,200,.3);border-radius:3px;overflow:hidden;position:relative}
+.fcons-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(74,58,112,.25) 0%,transparent 60%);pointer-events:none}
+.fcons-fog-bar{height:4px;background:linear-gradient(90deg,var(--f7),var(--f4),var(--f3));animation:fcbar 2s ease-in-out infinite alternate}
+@keyframes fcbar{0%{opacity:.5}100%{opacity:1}}
+.fcons-body{padding:28px 28px 22px;position:relative;z-index:1}
+.fcons-icon{font-size:32px;margin-bottom:14px;display:block;filter:drop-shadow(0 0 12px rgba(144,112,200,.5));animation:fciconpulse 3s ease-in-out infinite}
+@keyframes fciconpulse{0%,100%{filter:drop-shadow(0 0 8px rgba(144,112,200,.3))}50%{filter:drop-shadow(0 0 20px rgba(144,112,200,.7))}}
+.fcons-title{font-family:var(--ft);font-size:15px;color:var(--f2);letter-spacing:.06em;margin-bottom:10px}
+.fcons-msg{font-size:14.5px;color:var(--ts);font-style:italic;line-height:1.75;margin-bottom:18px}
+.fcons-fog-status{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(74,58,112,.15);border:1px solid rgba(144,112,200,.18);border-radius:2px;margin-bottom:18px}
+.fcons-fog-label{font-size:11px;color:var(--f2);font-family:var(--fm)}
+.fcons-fog-track{flex:1;height:4px;background:rgba(74,58,112,.2);border-radius:2px;overflow:hidden}
+.fcons-fog-fill{height:100%;border-radius:2px;transition:width 1.2s var(--eo);background:linear-gradient(90deg,var(--f7),var(--f4))}
+.fcons-fog-pct{font-family:var(--fm);font-size:10px;color:var(--f3)}
+.fcons-comp{padding:14px 16px;background:rgba(26,122,110,.08);border:1px solid rgba(45,158,142,.2);border-radius:2px;margin-bottom:20px}
+.fcons-comp-label{font-size:10px;color:var(--t4);text-transform:uppercase;letter-spacing:.1em;font-family:var(--ft);margin-bottom:6px}
+.fcons-comp-task{font-size:13.5px;color:var(--tp);font-style:italic;line-height:1.55}
+.fcons-comp-xp{font-family:var(--fm);font-size:10px;color:var(--a3);margin-top:4px}
+.fcons-footer{display:flex;gap:9px}
+.fcons-btn-close{flex:1;padding:10px;background:var(--f9);border:1px solid rgba(144,112,200,.3);border-radius:2px;color:var(--f2);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.fcons-btn-close:hover{background:var(--f7)}
+.fcons-btn-accept{flex:2;padding:10px;background:var(--t9);border:1px solid var(--t7);border-radius:2px;color:var(--t3);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.fcons-btn-accept:hover{background:var(--t7)}
+.fcons-sign{font-size:11px;color:var(--f4);font-family:var(--ft);letter-spacing:.08em;margin-top:8px;display:block}
+
+/* Fog surge animation on sidebar */
+@keyframes fogSurge{0%{opacity:.6}30%{opacity:1;filter:brightness(1.4)}100%{opacity:1}}
+.fog-surge{animation:fogSurge 1.4s var(--eo)}
+
+/* Compensation task badge in mission list */
+.mi.compensation{border-left-color:var(--t3) !important;background:rgba(26,122,110,.06)}
+.mi.compensation .mn::before{content:'✦ ';color:var(--t4);font-size:11px}
+
+
+/* ── SUPERCONQUISTA ── */
+#grande-overlay{position:fixed;inset:0;background:rgba(5,8,10,.96);z-index:900;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px;text-align:center}
+#grande-overlay.show{display:flex}
+.gt-stella-wrap{margin-bottom:28px;position:relative}
+.gt-stella-glow{width:88px;height:88px;border-radius:50%;background:radial-gradient(circle,rgba(200,120,255,.18) 0%,transparent 70%);border:1px solid rgba(200,120,255,.35);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:36px;filter:drop-shadow(0 0 20px rgba(200,120,255,.4));animation:stellapulse 3s ease-in-out infinite}
+@keyframes stellapulse{0%,100%{filter:drop-shadow(0 0 14px rgba(200,120,255,.3))}50%{filter:drop-shadow(0 0 32px rgba(200,120,255,.6))}}
+.gt-stella-name{font-family:var(--ft);font-size:11px;color:rgba(200,120,255,.7);letter-spacing:.18em;text-transform:uppercase;margin-top:10px}
+.gt-name-lucas{font-family:var(--ft);font-size:26px;color:var(--tp);letter-spacing:.08em;margin-bottom:24px;opacity:0}
+.gt-line{font-size:16px;color:var(--ts);font-style:italic;line-height:1.85;max-width:420px;margin:0 auto 4px;opacity:0}
+.gt-footer{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:32px;opacity:0}
+.gt-item-reveal{font-size:13px;color:var(--a2);font-family:var(--ft);letter-spacing:.06em;border:1px solid rgba(248,200,112,.3);padding:8px 20px;border-radius:2px;background:rgba(200,134,10,.06)}
+.gt-close-btn{padding:10px 28px;background:rgba(200,120,255,.1);border:1px solid rgba(200,120,255,.3);border-radius:2px;color:rgba(200,120,255,.9);font-family:var(--ft);font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.gt-close-btn:hover{background:rgba(200,120,255,.2)}
+.gt-divider{width:60px;height:1px;background:rgba(200,120,255,.2);margin:16px auto}
+
+/* Superconquista card in clist */
+.ci-grande{border-left:3px solid rgba(200,120,255,.5) !important;background:linear-gradient(135deg,rgba(200,120,255,.04) 0%,var(--surface) 100%) !important}
+.ci-grande-done{border-left-color:rgba(200,120,255,.9) !important}
+.ci-grande-locked{opacity:.7}
+.ciw-grande{background:rgba(200,120,255,.08) !important;border-color:rgba(200,120,255,.25) !important;font-size:22px !important}
+.ci-grande-body{flex:1;min-width:0}
+.ci-grande .cn{color:rgba(220,170,255,.9)}
+
+/* Personal conquest card */
+.ci-personal{border-left:3px solid rgba(248,200,112,.4) !important}
+
+/* ── PERSONAL GOAL MODAL ── */
+#personal-modal{position:fixed;inset:0;background:rgba(10,13,15,.82);z-index:820;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+#personal-modal.show{display:flex}
+.pm-inner{background:var(--card);border:1px solid var(--bf);border-radius:3px;padding:26px 26px 22px;width:100%;max-width:400px}
+.pm-title{font-family:var(--ft);font-size:15px;color:var(--tp);letter-spacing:.06em;margin-bottom:6px}
+.pm-sub{font-size:13px;color:var(--tm);font-style:italic;line-height:1.6;margin-bottom:20px}
+.pm-inp{width:100%;background:var(--surface);border:1px solid var(--bf);border-radius:2px;padding:9px 13px;font-family:var(--fb);font-size:16px;color:var(--tp);outline:none;margin-bottom:16px;transition:border-color .2s}
+.pm-inp:focus{border-color:var(--t5)}
+.pm-footer{display:flex;gap:9px}
+.pm-cancel{flex:1;padding:9px;background:none;border:1px solid var(--bs);border-radius:2px;color:var(--ts);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.pm-save{flex:2;padding:9px;background:var(--t9);border:1px solid var(--t7);border-radius:2px;color:var(--t3);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.pm-save:hover{background:var(--t7)}
+.pm-done-btn{margin-top:10px;width:100%;padding:9px;background:rgba(248,200,112,.08);border:1px solid rgba(248,200,112,.25);border-radius:2px;color:var(--a2);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.pm-done-btn:hover{background:rgba(248,200,112,.15)}
+
 </style>
 </head>
 <body>
@@ -297,6 +424,11 @@ nav{display:flex;gap:4px}
     </div>
     <div class="mhdr"><div class="mtit">Missões de Hoje</div><div class="mprog" id="mprog">0 / 8</div></div>
     <div class="mlist" id="mlist"></div>
+    <div id="ctask-section">
+      <div class="ctask-divider"><div class="ctask-divider-line"></div><div class="ctask-divider-label">Missões Escolhidas por Você</div><div class="ctask-divider-line"></div></div>
+      <div class="mlist" id="ctask-list"></div>
+      <button class="ctask-add-btn" onclick="openCtaskModal()"><span class="ctask-add-icon">+</span>Criar nova missão escolhida</button>
+    </div>
   </div>
 
   <!-- CONQUISTAS -->
@@ -347,6 +479,100 @@ nav{display:flex;gap:4px}
 <!-- LEVEL UP -->
 <div id="luo"><div class="luc"><span class="lug">✦</span><div class="lut" id="lun2">Nível 2</div><div class="lun" id="luname">Guardião do Primeiro Passo</div><div class="lum" id="lumsg">Sua constância já tem forma.</div><button class="bcont" id="luclose">Continuar a Jornada</button></div></div>
 
+
+<!-- CUSTOM TASK MODAL -->
+<div id="ctask-modal">
+<div class="ctask-modal-inner">
+  <div class="cm-title">Nova Missão Escolhida</div>
+  <div class="cm-sub">Você conhece sua jornada melhor do que ninguém.<br>Crie uma tarefa que faça sentido para onde você está agora.</div>
+  <label class="cm-label">Nome da missão</label>
+  <input class="cm-input" type="text" id="ctask-name" placeholder="Ex: Tomar água ao acordar…" maxlength="60" oninput="updateXpPreview()">
+  <label class="cm-label">Categoria</label>
+  <div class="cm-pills" id="ctask-cats">
+    <div class="cm-pill" data-val="Alimentação" onclick="selectPill(this,'cat')">Alimentação</div>
+    <div class="cm-pill" data-val="Movimento" onclick="selectPill(this,'cat')">Movimento</div>
+    <div class="cm-pill" data-val="Cuidado Mental" onclick="selectPill(this,'cat')">Cuidado Mental</div>
+    <div class="cm-pill" data-val="Livre" onclick="selectPill(this,'cat')">Livre</div>
+  </div>
+  <label class="cm-label">Nível de esforço</label>
+  <div class="cm-pills" id="ctask-effs">
+    <div class="cm-pill" data-val="leve" onclick="selectPill(this,'eff')">Leve</div>
+    <div class="cm-pill" data-val="normal" onclick="selectPill(this,'eff')">Normal</div>
+    <div class="cm-pill" data-val="intenso" onclick="selectPill(this,'eff')">Intenso</div>
+  </div>
+  <div class="cm-xp-preview" id="ctask-xp-preview">Escolha uma categoria e nível de esforço para ver o XP gerado.</div>
+  <div class="cm-footer">
+    <button class="cm-btn-cancel" onclick="closeCtaskModal()">Cancelar</button>
+    <button class="cm-btn-save" id="ctask-save-btn" onclick="saveCtask()" disabled>Adicionar à Jornada</button>
+  </div>
+</div>
+</div>
+
+
+<!-- FOG CONSEQUENCE MODAL -->
+<div id="fog-consequence">
+  <div class="fcons-inner">
+    <div class="fcons-fog-bar"></div>
+    <div class="fcons-body">
+      <span class="fcons-icon" id="fcons-icon">🌫</span>
+      <div class="fcons-title" id="fcons-title">A névoa ficou mais densa esta noite</div>
+      <div class="fcons-msg" id="fcons-msg">Hoje foi mais difícil. A névoa ficou mais densa, mas a jornada continua.</div>
+      <div class="fcons-fog-status">
+        <span class="fcons-fog-label">Névoa Mental</span>
+        <div class="fcons-fog-track"><div class="fcons-fog-fill" id="fcons-fog-fill" style="width:0%"></div></div>
+        <span class="fcons-fog-pct" id="fcons-fog-pct">0%</span>
+      </div>
+      <div class="fcons-comp" id="fcons-comp" style="display:none">
+        <div class="fcons-comp-label">✦ Uma missão leve de cuidado foi sugerida para amanhã</div>
+        <div class="fcons-comp-task" id="fcons-comp-task"></div>
+        <div class="fcons-comp-xp" id="fcons-comp-xp"></div>
+      </div>
+      <div class="fcons-footer">
+        <button class="fcons-btn-close" onclick="closeFogConsequence()">Fechar</button>
+        <button class="fcons-btn-accept" id="fcons-accept-btn" onclick="acceptCompensation()">Aceitar missão de cuidado</button>
+      </div>
+      <span class="fcons-sign">— Tariel</span>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- GRANDE TRAVESSIA OVERLAY -->
+<div id="grande-overlay">
+  <div class="gt-stella-wrap">
+    <div class="gt-stella-glow">🌟</div>
+    <div class="gt-stella-name">Elfa Stella</div>
+  </div>
+  <div class="gt-name-lucas fi" id="gt-name-lucas" style="animation-delay:.3s">Lucas...</div>
+  <div class="gt-divider"></div>
+  <div class="gt-line">Eu vi cada retorno.</div>
+  <div class="gt-line">Cada dia em que a névoa estava espessa</div>
+  <div class="gt-line">e você escolheu aparecer mesmo assim.</div>
+  <div class="gt-line">Cada pequeno gesto de cuidado</div>
+  <div class="gt-line">que ninguém mais viu — mas eu vi.</div>
+  <div class="gt-line" style="margin-top:16px;color:var(--tp)">Tenho muito orgulho de você.</div>
+  <div class="gt-footer">
+    <div class="gt-item-reveal">✦ A Relíquia da Travessia foi adicionada ao seu inventário</div>
+    <button class="gt-close-btn" onclick="closeGrandeTravessia()">Continuar a Jornada</button>
+  </div>
+</div>
+
+<!-- PERSONAL GOAL MODAL -->
+<div id="personal-modal">
+  <div class="pm-inner">
+    <div class="pm-title">Conquista Pessoal</div>
+    <div class="pm-sub">Escolha um nome para algo que tem significado só para você. O app apenas reconhece quando você disser que chegou.</div>
+    <input class="pm-inp" type="text" id="personal-name-inp" placeholder="Ex: Meu primeiro mês completo…" maxlength="50" onkeydown="if(event.key==='Enter')savePersonalGoal()">
+    <div class="pm-footer">
+      <button class="pm-cancel" onclick="closePersonalGoal()">Cancelar</button>
+      <button class="pm-save" onclick="savePersonalGoal()">Registrar</button>
+    </div>
+    <button class="pm-done-btn" id="pm-done-btn" onclick="markPersonalGoalDone()" style="display:none">Marcar como concluída</button>
+  </div>
+</div>
+
+
 <script>
 // ═══════════════════════════════════════
 // DADOS
@@ -367,34 +593,96 @@ const LEVELS=[
 const MISSIONS=[
   {id:'3meals',n:'O Ritual das Três Refeições',d:'Alimentar-se em três momentos distintos do dia, sem beliscar entre eles.',cat:'Alimentação',xp:15,fog:2,t:'Você nutriu seu corpo com intenção. Isso é sabedoria, não restrição. Cada refeição foi um ato de presença.'},
   {id:'nosnack',n:'A Pausa entre as Refeições',d:'Ir de uma refeição à outra sem petiscos intermediários.',cat:'Alimentação',xp:10,fog:2,t:'Você ouviu seu corpo com atenção. Isso exige mais coragem do que parece, especialmente nos momentos difíceis.'},
-  {id:'run',n:'A Corrida dos Ventos',d:'Uma sessão de corrida, independente da distância ou velocidade.',cat:'Movimento',xp:20,fog:5,t:'Seus pés encontraram o ritmo. Cada passada foi um ato de compromisso com você mesmo. O vento carregou um pouco da névoa.'},
   {id:'strength',n:'O Treino da Forja',d:'Uma sessão de musculação ou treino de força.',cat:'Movimento',xp:20,fog:4,t:'Você forjou algo hoje. Não apenas músculo — determinação que se acumula invisível, camada por camada.'},
-  {id:'walk',n:'O Passo Gentil',d:'Caminhar por pelo menos 20 minutos, em qualquer ritmo.',cat:'Movimento',xp:12,fog:3,t:'Cada passo, mesmo o mais lento, leva você adiante. Não subestime o passo gentil — ele é frequentemente o mais sábio.'},
-  {id:'sleep',n:'O Recolhimento da Noite',d:'Dormir entre 7 e 9 horas. Registrar ao acordar.',cat:'Descanso',xp:18,fog:4,t:'Você deu ao seu corpo o que ele mais precisa. O descanso não é fraqueza — é a metade invisível da jornada que a maioria ignora.'},
-  {id:'breath',n:'A Respiração da Névoa',d:'Uma pausa consciente de 3 a 5 minutos. Respiração, meditação breve ou simplesmente silêncio.',cat:'Presença',xp:8,fog:3,t:'Você criou espaço dentro de você. Nesses momentos de silêncio, a névoa recua — sem luta, só com presença.'},
+  {id:'walk',n:'O Passo Gentil',d:'Correr por pelo menos 20 minutos, em qualquer ritmo.',cat:'Movimento',xp:20,fog:5,t:'Cada passo encontrou seu ritmo. Não importa a velocidade — o que importa é que você saiu. Isso fica registrado no corpo e na jornada.'},
+  {id:'sleep',n:'O Recolhimento da Noite',d:'Dormir entre 7 e 9 horas. Registrar ao acordar.',cat:'Descanso',xp:10,fog:4,t:'Você deu ao seu corpo o que ele mais precisa. O descanso não é fraqueza — é a metade invisível da jornada que a maioria ignora.'},
   {id:'presence',n:'O Registro da Presença',d:'Simplesmente estar aqui hoje. Para dias em que fazer mais não é possível.',cat:'Presença',xp:5,fog:1,t:'Você apareceu. Em um dia difícil, isso já é tudo. Realmente. Não precisa ser mais do que é.'},
+  {id:'study',n:'A Vigília do Conhecimento',d:'Dedicar ao menos 30 minutos a estudo ou aprendizado intencional.',cat:'Mente',xp:15,fog:2,t:'A mente que aprende continua se expandindo. Você investiu em si mesmo hoje — isso é uma forma de cuidado que nunca se perde.'},
+  {id:'water',n:'O Chamado da Água',d:'Beber ao menos 5 copos de água ao longo do dia.',cat:'Alimentação',xp:10,fog:2,t:'O corpo agradece em silêncio cada vez que você o nutre com o básico. A água é o cuidado mais simples e mais esquecido.'},
+  {id:'meds',n:'O Ritual da Preparação',d:'Conferir e tomar os medicamentos e vitaminas do dia.',cat:'Saúde',xp:5,fog:1,t:'Cuidar de si mesmo inclui os gestos que ninguém vê. Você fez o que precisava ser feito — isso conta.'},
+  {id:'selfcare',n:'O Cuidado do Guardião',d:'Realizar o autocuidado diário, como a aplicação do minoxidil.',cat:'Saúde',xp:5,fog:1,t:'O guardião que cuida de si mesmo cuida melhor de tudo ao redor. Cada gesto de autocuidado é um ato de respeito próprio.'},
 ];
 
 const ACHIEVEMENTS=[
-  {id:'first',n:'Primeiro Sopro',icon:'✦',cond:'Completar 1 missão',msg:'A jornada de mil léguas começa aqui. Você deu o primeiro sopro de vida a este caminho.',chk:s=>s.total>=1},
-  {id:'7days',n:'Fio de Luz',icon:'〰',cond:'7 dias de presença',msg:'Sete dias. Não perfeitos — presentes. Você teceu um fio de luz na névoa.',chk:s=>s.days>=7},
-  {id:'sleep10',n:'Guardião do Sono',icon:'◎',cond:'10 missões de sono',msg:'Você descobriu que o descanso é parte do esforço. Muitos nunca aprendem isso.',chk:s=>(s.mc.sleep||0)>=10},
-  {id:'30days',n:'Viajante Constante',icon:'◈',cond:'30 dias de presença',msg:'Um mês. Com todos os seus dias fáceis e difíceis. Você permaneceu. Isso é extraordinário.',chk:s=>s.days>=30},
-  {id:'fogwalk',n:'Andarilho das Brumas',icon:'◉',cond:'Completar missão com névoa > 60%',msg:'Você avançou mesmo quando estava pesado por dentro. Isso é a forma mais rara de coragem.',chk:s=>s.highfog>=1},
-  {id:'weight10',n:'Testemunha da Jornada',icon:'◇',cond:'Registrar peso 10 vezes',msg:'Você olhou para o número dez vezes e continuou. O peso não te parou. Isso diz tudo.',chk:s=>s.wr.length>=10},
-  {id:'return',n:'O Retorno',icon:'⟐',cond:'Retornar após 10+ dias',msg:'Você sumiu e voltou. Isso não é fraqueza — é a prova de que esse caminho é seu. Bem-vindo de volta.',chk:s=>s.returned},
-  {id:'100miss',n:'Portador da Constância',icon:'❖',cond:'100 missões completadas',msg:'Cem missões. Não perfeitas, não consecutivas — mas cem. Isso é uma vida que está mudando.',chk:s=>s.total>=100},
+  // ── Conquistas visíveis (interpretativas + quantitativas) ──
+  {id:'first',n:'Primeiro Sopro',icon:'✦',cond:'Completar 1 missão',hidden:false,
+    msg:'A jornada de mil léguas começa aqui. Você deu o primeiro sopro de vida a este caminho.',
+    chk:function(s){return s.total>=1}},
+  {id:'7days',n:'Fio de Luz',icon:'〰',cond:'7 dias de presença',hidden:false,
+    msg:'Sete dias. Não perfeitos — presentes. Você teceu um fio de luz na névoa.',
+    chk:function(s){return s.days>=7}},
+  {id:'sleep10',n:'Guardião do Sono',icon:'◎',cond:'10 missões de sono',hidden:false,
+    msg:'Você descobriu que o descanso é parte do esforço. Muitos nunca aprendem isso.',
+    chk:function(s){return (s.mc.sleep||0)>=10}},
+  {id:'30days',n:'Viajante Constante',icon:'◈',cond:'30 dias de presença',hidden:false,
+    msg:'Um mês. Com todos os seus dias fáceis e difíceis. Você permaneceu. Isso é extraordinário.',
+    chk:function(s){return s.days>=30}},
+  {id:'fogwalk',n:'Caminhar na Névoa',icon:'◉',cond:'Completar missão com névoa alta',hidden:false,
+    msg:'Você avançou mesmo quando estava pesado por dentro. Isso é a forma mais rara de coragem — a que não se anuncia.',
+    chk:function(s){return s.highfog>=1}},
+  {id:'weight10',n:'Testemunha da Jornada',icon:'◇',cond:'Registrar presença semanal 10 vezes',hidden:false,
+    msg:'Você olhou para o número dez vezes e continuou. O que era pesado foi ficando mais leve — não só no corpo.',
+    chk:function(s){return s.wr.length>=10}},
+  {id:'100miss',n:'Portador da Constância',icon:'❖',cond:'100 missões completadas',hidden:false,
+    msg:'Cem missões. Não perfeitas, não consecutivas — mas cem. Isso é uma vida que está mudando, uma escolha de cada vez.',
+    chk:function(s){return s.total>=100}},
+  {id:'study5',n:'Persistência Silenciosa',icon:'📖',cond:'Aprendizado constante',hidden:false,
+    msg:'Cinco vezes você escolheu crescer quando poderia ter descansado na superfície. A mente que não para de aprender é a que mais avança.',
+    chk:function(s){return (s.mc.study||0)>=5}},
+  {id:'selfcare10',n:'Escolhas Conscientes',icon:'🌿',cond:'Autocuidado consistente',hidden:false,
+    msg:'Dez vezes você lembrou de cuidar de si mesmo. Esse cuidado silencioso é a fundação de tudo o que você está construindo.',
+    chk:function(s){return (s.mc.selfcare||0)>=10}},
+  // ── Conquistas de retorno ──
+  {id:'return',n:'O Retorno',icon:'⟐',cond:'Voltar após uma pausa',hidden:false,
+    msg:'Você voltou. Isso não é fraqueza — é a prova de que esse caminho é seu. Ninguém que desiste volta. Bem-vindo de volta a si mesmo.',
+    chk:function(s){return s.returned}},
+  {id:'return2',n:'A Chama que Não Apaga',icon:'🔥',cond:'Voltar mais de uma vez',hidden:false,
+    msg:'Você partiu e voltou de novo. A chama que parecia extinta era apenas esperando o momento certo. Esse padrão tem nome: resiliência.',
+    chk:function(s){return (s.returnCount||0)>=2}},
+  // ── Conquistas invisíveis (reveladas como surpresa) ──
+  {id:'water_streak',n:'O Rio Interior',icon:'💧',cond:'Surpresa',hidden:true,
+    msg:'Silenciosamente, você foi nutrindo seu corpo com algo tão simples quanto água. Cinco vezes. Sem alarde. Isso é cuidado verdadeiro.',
+    chk:function(s){return (s.mc.water||0)>=5}},
+  {id:'meds_streak',n:'O Guarda das Pequenas Coisas',icon:'🌙',cond:'Surpresa',hidden:true,
+    msg:'Os gestos invisíveis são os que sustentam tudo. Você cuidou das pequenas obrigações com o mesmo respeito que dá às grandes.',
+    chk:function(s){return (s.mc.meds||0)>=7}},
+  {id:'full_day',n:'O Dia Inteiro',icon:'☀',cond:'Surpresa',hidden:true,
+    msg:'Hoje você completou todas as missões do dia. Não como prova de algo — mas como expressão de quem você está se tornando.',
+    chk:function(s){
+      var tot=MISSIONS.length;
+      var done=Object.values(s.tdm||{}).filter(Boolean).length;
+      return done>=tot&&tot>0;
+    }},
+  {id:'60days',n:'A Estação que Passou',icon:'🌱',cond:'Surpresa',hidden:true,
+    msg:'Dois meses. As estações mudam e você continua aqui. O que começou como tentativa está se tornando parte de quem você é.',
+    chk:function(s){return s.days>=60}},
+  // ── Conquista pessoal (definida pelo usuário) ──
+  {id:'personal',n:'Minha Conquista',icon:'⭐',cond:'Definida por você',hidden:false,
+    msg:'Esta conquista pertence só a você. O que ela representa, só você sabe — e isso é suficiente.',
+    chk:function(s){return !!(s.personalGoalDone)}},
 ];
 
 const ITEMS=[
-  {id:'amulet',icon:'🪬',n:'Amuleto da Constância',d:'Feito do metal da persistência. Pesa pouco, mas vale muito.',ach:'7days'},
-  {id:'scroll',icon:'📜',n:'Pergaminho da Aceitação',d:"Nele está escrito: 'Eu estou aqui. E isso é suficiente.'",ach:'weight10'},
-  {id:'mantle',icon:'🌫',n:'Manto da Névoa',d:'Tecido com os fios dos dias difíceis. Quem o carrega conhece o verdadeiro caminho.',ach:'fogwalk'},
-  {id:'lantern',icon:'🏮',n:'Lanterna do Retorno',d:'Não importa quanto tempo estava apagada. Volta a brilhar.',ach:'return'},
-  {id:'chalice',icon:'🏺',n:'Cálice do Descanso',d:'Contém o elixir do tempo bem descansado. Raro e precioso.',ach:'sleep10'},
-  {id:'compass',icon:'⧖',n:'Compasso da Trilha',d:'Aponta não para o norte, mas para o próximo passo certo.',ach:'100miss'},
-  {id:'stone',icon:'◆',n:'Pedra da Persistência',d:'Uma pedra simples. Mas sobreviveu a mil tempestades.',ach:'30days'},
-  {id:'seed',icon:'✿',n:'Semente da Luz',d:'O começo de tudo. Carrega dentro dela o potencial de uma floresta.',ach:'first'},
+  {id:'seed',      icon:'✿', n:'Semente da Luz',           ach:'first',
+    d:'O começo de tudo. Carrega dentro dela o potencial de uma floresta inteira. Cada grande jornada começa com um único gesto.'},
+  {id:'amulet',    icon:'🪬', n:'Amuleto da Calma',          ach:'7days',
+    d:'Aparece em momentos de névoa alta para lembrar: você já atravessou dias assim antes. Este talismã é feito da memória dessas travessias.'},
+  {id:'scroll',    icon:'📜', n:'Pergaminho da Continuidade', ach:'return',
+    d:'Recebido após um retorno. Nele está escrito: a trilha não some quando você se afasta. Ela espera, sem julgamento, sem pressa.'},
+  {id:'mantle',    icon:'🌫', n:'Manto da Névoa',             ach:'fogwalk',
+    d:'Tecido com os fios dos dias difíceis. Quem o carrega sabe que agir sob névoa espessa é a forma mais rara de força.'},
+  {id:'chalice',   icon:'🏺', n:'Cálice do Descanso',         ach:'sleep10',
+    d:'Contém o elixir do tempo bem descansado. Quem aprendeu a descansar sem culpa carrega sabedoria que poucos possuem.'},
+  {id:'stone',     icon:'◆',  n:'Pedra da Persistência',      ach:'30days',
+    d:'Uma pedra simples. Sobreviveu a trinta dias de tempestades e calmarias. O peso dela é exatamente o mesmo — mas o que representa é imenso.'},
+  {id:'compass',   icon:'⧖',  n:'Compasso da Trilha',         ach:'100miss',
+    d:'Não aponta para o norte. Aponta para o próximo passo certo — que às vezes é descansar, às vezes é avançar, sempre é continuar.'},
+  {id:'lantern',   icon:'🏮', n:'Lanterna do Retorno',        ach:'return2',
+    d:'Cada vez que foi acesa novamente, brilhou um pouco diferente. Não porque mudou — porque quem a carrega mudou.'},
+  {id:'leaf',      icon:'🌿', n:'Folha do Cuidado Silencioso', ach:'selfcare10',
+    d:'Os gestos que ninguém vê são os que sustentam tudo. Esta folha representa cada momento de autocuidado que você escolheu, em silêncio.'},
+  {id:'relic',     icon:'💎', n:'Relíquia da Travessia',      ach:'grande_travessia',
+    d:'Item lendário. Obtido em um momento singular da jornada. Carrega consigo a memória de tudo que foi superado para chegar até aqui.'},
 ];
 
 const QUOTES=[
@@ -442,7 +730,7 @@ const CLASSES=[
 // STATE
 // ═══════════════════════════════════════
 const SK='trilha_eq_v3';
-const DS={name:'',cls:'',xp:0,fog:35,today:'',tdm:{},total:0,mc:{},highfog:0,ach:[],wr:[],days:0,lastday:'',returned:false,wmap:{},firstRun:true,_retShown:false};
+const DS={name:'',cls:'',xp:0,fog:35,today:'',tdm:{},total:0,mc:{},highfog:0,ach:[],wr:[],days:0,lastday:'',returned:false,returnCount:0,wmap:{},firstRun:true,_retShown:false,ctasks:[],ctdm:{},lastConseqDate:'',pendingComp:null,_consecShown:false,grandeDone:false,personalGoalDone:false,personalGoalName:'',itemDates:{}};
 let S={};
 
 function save(){try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){}}
@@ -460,21 +748,68 @@ function fogState(){for(const f of FOGST)if(S.fog<f.max)return f;return FOGST[FO
 function checkDay(){
   const t=todayStr();
   if(S.today!==t){
-    S.tdm={};S.today=t;
+    // Evaluate yesterday before resetting
+    if(S.today&&S.today!==t){
+      evaluateDayConsequences(S.today,S.tdm,S.ctdm);
+    }
+    S.tdm={};S.ctdm={};S.today=t;
     if(S.lastday&&S.lastday!==t){
       const d=daysSince(S.lastday);
-      if(d>=10){S.returned=true;S.fog=Math.min(S.fog+d*2,60)}
-      else S.fog=Math.min(S.fog+d*2,85);
+      if(d>=10){S.returned=true;S.returnCount=(S.returnCount||0)+1;S.fog=Math.min(S.fog+d*2,60)}
+      else{S.returnCount=(S.returnCount||0)+1;S.fog=Math.min(S.fog+d*2,85);}
     }
     S.lastday=t;S.days++;S.wmap[t]=true;
   }
 }
 
+function evaluateDayConsequences(date,tdm,ctdm){
+  if(S.lastConseqDate===date)return; // already evaluated this day
+  S.lastConseqDate=date;
+  const foodMissions=MISSIONS.filter(m=>m.cat==='Alimentação');
+  const missedFood=foodMissions.filter(m=>!tdm[m.id]);
+  // Custom food tasks missed
+  const customFood=(S.ctasks||[]).filter(t=>t.cat==='Alimentação'&&!t.paused&&!(ctdm||{})[t.id]);
+  const totalMissed=missedFood.length+customFood.length;
+  if(totalMissed===0)return; // all food done — no consequence
+  // Calculate fog increase — proportional, never catastrophic
+  // Max increase: 18% for missing all food missions; never pushes above 85
+  const ratio=totalMissed/(foodMissions.length+customFood.length);
+  const fogIncrease=Math.round(ratio*18);
+  if(fogIncrease<=0)return;
+  const prevFog=S.fog;
+  S.fog=Math.min(S.fog+fogIncrease,85);
+  // Pick a compensation task
+  const comp=pickCompensationTask(missedFood,customFood);
+  S.pendingComp={fogWas:prevFog,fogNow:S.fog,fogIncrease,missedCount:totalMissed,comp,date,_accepted:false};
+  S._consecShown=false;
+  save();
+}
+
+function pickCompensationTask(missedFood,customFood){
+  const compTasks=[
+    {id:"comp_agua",name:"Um copo de agua ao acordar",cat:"Alimentação",xp:5,desc:"Começar o dia com um gesto simples de cuidado. Só um copo de água, com intenção."},
+    {id:"comp_fruta",name:"Uma fruta no próximo lanche",cat:"Alimentação",xp:6,desc:"Sem restrição — apenas oferecer ao corpo algo nutritivo e gentil."},
+    {id:"comp_breath_food",name:"Um minuto antes de comer",cat:"Presença",xp:5,desc:"Antes da próxima refeição, um minuto de pausa consciente. Só isso."},
+    {id:"comp_refeicao",name:"Uma refeição com atenção plena",cat:"Alimentação",xp:8,desc:"Comer uma refeição sem distrações. Sentir o sabor, a textura, a saciedade."},
+    {id:"comp_caminhada",name:"Uma caminhada de 10 minutos",cat:"Movimento",xp:8,desc:"Não para queimar — para mover, para oxigenar, para sentir o corpo se mover com gentileza."},
+    {id:"comp_autocuidado",name:"Um gesto de autocuidado",cat:"Cuidado Mental",xp:6,desc:"Qualquer gesto: um banho quente, uma música favorita, cinco minutos só seus."},
+  ];
+  const foodComps=compTasks.filter(function(t){return t.cat==="Alimentação"});
+  const pool=missedFood.length>0?foodComps:compTasks;
+  return pool[Math.floor(Math.random()*pool.length)];
+}
 function checkAch(){
   const fresh=[];
   for(const a of ACHIEVEMENTS){
+    if(a.id==='grande_travessia')continue; // handled separately
     if(S.ach.includes(a.id))continue;
-    if(a.chk(S)){S.ach.push(a.id);fresh.push(a)}
+    if(a.chk(S)){
+      S.ach.push(a.id);
+      // Record date + context for items linked to this achievement
+      if(!S.itemDates)S.itemDates={};
+      S.itemDates[a.id]=todayStr();
+      fresh.push(a);
+    }
   }
   if(fresh.length)save();
   return fresh;
@@ -485,7 +820,7 @@ function completeMission(id){
   const m=MISSIONS.find(x=>x.id===id);
   if(!m)return null;
   const prevLvl=curLevel().l;
-  S.tdm[id]=true;S.xp+=m.xp;S.total++;
+  if(!S.ctdm)S.ctdm={};S.tdm[id]=true;S.xp+=m.xp;S.total++;
   S.mc[id]=(S.mc[id]||0)+1;
   if(S.fog>=60)S.highfog++;
   S.fog=Math.max(0,S.fog-m.fog);
@@ -501,7 +836,13 @@ function regWeight(val){
   if(last!==null){if(val<last-.05)trend='down';else if(val>last+.05)trend='up'}
   S.wr.push({d:todayStr(),v:val,trend});
   S.xp+=15;save();
-  return{trend,resp:rnd(WRESP[trend]),fresh:checkAch()};
+  const fresh=checkAch();
+  // Check grande travessia (internal trigger, never shown as number to user)
+  if(!S.grandeDone&&val<=75){
+    S.grandeDone=true;save();
+    setTimeout(function(){showGrandeTravessia();},1800);
+  }
+  return{trend,resp:rnd(WRESP[trend]),fresh};
 }
 
 // ═══════════════════════════════════════
@@ -531,7 +872,7 @@ function renderSL(){
 
 function renderPortrait(c,fog){
   // Character image is static — only fog particles are dynamic
-  const fp=document.getElementById('fpp');fp.innerHTML='';
+  const fp=document.getElementById('fpp');if(!fp)return;fp.innerHTML='';
   // Fog intensity on the glow ring
   const glow=document.getElementById('char-glow');
   if(glow){
@@ -547,7 +888,13 @@ function renderPortrait(c,fog){
 
 function renderItems(){
   const g=document.getElementById('igrid');
-  g.innerHTML=ITEMS.map(it=>{const on=S.ach.includes(it.ach);return`<div class="isl ${on?'on':'off'}"><span>${on?it.icon:'·'}</span>${on?`<div class="ittip"><strong>${it.n}</strong><br><em>${it.d}</em></div>`:''}</div>`}).join('');
+  if(!g)return;
+  g.innerHTML=ITEMS.map(function(it){
+    var on=S.ach.includes(it.ach)||(it.ach==='grande_travessia'&&S.grandeDone);
+    return '<div class="isl '+(on?'on':'off')+'"><span>'+(on?it.icon:'·')+'</span>'+
+      (on?'<div class="ittip"><strong>'+it.n+'</strong><br><em>'+it.d+'</em></div>':'')+
+      '</div>';
+  }).join('');
 }
 
 function renderSR(){
@@ -572,19 +919,85 @@ function renderMissions(){
     const done=!!S.tdm[m.id];
     return`<div class="mi${done?' done':''} fi s${Math.min(i+1,5)}" id="mi-${m.id}"${!done?` onclick="doMission('${m.id}')"`:''}><div class="mchk"></div><div class="mbody"><div class="mn">${m.n}</div><div class="md">${m.d}</div><span class="mcat">${m.cat}</span></div><div class="mxp">${done?'✓':'+'+m.xp}</div></div>`;
   }).join('');
-  const done=Object.values(S.tdm).filter(Boolean).length;
-  document.getElementById('mprog').textContent=done+' / '+MISSIONS.length;
+  renderCustomTasks();
+  updateMprog();
+}
+function updateMprog(){
+  const active=(S.ctasks||[]).filter(t=>!t.paused);
+  const total=MISSIONS.length+active.length;
+  const doneBase=Object.values(S.tdm).filter(Boolean).length;
+  const doneCust=Object.values(S.ctdm||{}).filter(Boolean).length;
+  document.getElementById('mprog').textContent=(doneBase+doneCust)+' / '+total;
 }
 
 function renderConquests(){
-  const ul=ACHIEVEMENTS.filter(a=>S.ach.includes(a.id));
-  const lk=ACHIEVEMENTS.filter(a=>!S.ach.includes(a.id));
-  document.getElementById('clist').innerHTML=[
-    ...ul.map((a,i)=>`<div class="ci on fi s${Math.min(i+1,5)}"><div class="ciw">${a.icon}</div><div><div class="cn">${a.n}</div><div class="cm">"${a.msg}"</div><div class="cd">${a.cond}</div></div></div>`),
-    lk.length?`<div style="margin:18px 0 9px;font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:.1em;font-family:var(--ft)">Ainda por descobrir</div>`:'',
-    ...lk.map(a=>`<div class="ci off"><div class="ciw" style="filter:blur(2px)">${a.icon}</div><div><div class="cn" style="filter:blur(3px)">???????????</div><div class="cm" style="filter:blur(2px)">Um segredo ainda por revelar.</div></div></div>`),
-  ].join('');
-  document.getElementById('ilistc').innerHTML=ITEMS.map(it=>{const on=S.ach.includes(it.ach);return`<div class="ci ${on?'on':'off'}"><div class="ciw">${on?it.icon:'·'}</div><div><div class="cn">${on?it.n:'???'}</div><div class="cm">${on?'"'+it.d+'"':'Item ainda não descoberto.'}</div></div></div>`}).join('');
+  var ul=ACHIEVEMENTS.filter(function(a){return S.ach.includes(a.id)&&a.id!=='personal'});
+  // personal conquest shown separately if set
+  var personalAch=ACHIEVEMENTS.find(function(a){return a.id==='personal'});
+  var personalDone=S.ach.includes('personal');
+  // visible locked (not hidden, not done, not personal)
+  var lkVis=ACHIEVEMENTS.filter(function(a){return !S.ach.includes(a.id)&&!a.hidden&&a.id!=='personal'});
+  // hidden locked — only show count, not details
+  var lkHid=ACHIEVEMENTS.filter(function(a){return !S.ach.includes(a.id)&&a.hidden});
+  var clist=document.getElementById('clist');
+  if(!clist)return;
+  var rows=[];
+  // superconquista always first — visible but mysterious
+  var grandeDone=S.ach.includes('grande_travessia');
+  rows.push('<div class="ci ci-grande '+(grandeDone?'on ci-grande-done':'ci-grande-locked')+'">'+
+    '<div class="ciw ciw-grande">'+(grandeDone?'💎':'◈')+'</div>'+
+    '<div class="ci-grande-body">'+
+    '<div class="cn">'+(grandeDone?'A Grande Travessia':'A Grande Travessia')+'</div>'+
+    '<div class="cm">'+(grandeDone?
+      '"Esta conquista foi forjada em silêncio, ao longo de muitos dias. Ela pertence a você de uma forma que nenhum número pode descrever."':
+      '"Algo espera no horizonte desta jornada. Não é uma meta — é uma travessia. Quando chegar, você vai reconhecer."')+
+    '</div>'+
+    (grandeDone?''+'<div class="cd" style="color:var(--a3);margin-top:4px">Desbloqueada</div>':'<div class="cd" style="font-style:italic;color:var(--tm);margin-top:4px">Condição desconhecida · A trilha revela quando é hora</div>')+
+    '</div></div>');
+  // unlocked achievements
+  ul.forEach(function(a,i){
+    rows.push('<div class="ci on fi s'+Math.min(i+1,5)+'">'+
+      '<div class="ciw">'+a.icon+'</div>'+
+      '<div><div class="cn">'+a.n+'</div>'+
+      '<div class="cm">"'+a.msg+'"</div>'+
+      '<div class="cd">'+a.cond+'</div></div></div>');
+  });
+  // personal conquest
+  if(personalAch){
+    var pname=S.personalGoalName||'Minha Conquista';
+    rows.push('<div class="ci '+(personalDone?'on':'off')+' ci-personal">'+
+      '<div class="ciw">⭐</div>'+
+      '<div style="flex:1"><div class="cn">'+pname+'</div>'+
+      '<div class="cm">'+(personalDone?'"Esta conquista pertence só a você. O que ela representa, só você sabe — e isso é suficiente."':'Conquista pessoal — definida e concluída por você.')+'</div>'+
+      '</div>'+
+      (!personalDone?'<button onclick="openPersonalGoal()" style="background:none;border:1px solid var(--bf);border-radius:2px;padding:5px 10px;color:var(--t4);font-family:var(--ft);font-size:9px;letter-spacing:.08em;cursor:pointer;flex-shrink:0;align-self:center">Definir</button>':'')+
+      '</div>');
+  }
+  // locked visible
+  if(lkVis.length){
+    rows.push('<div style="margin:18px 0 9px;font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:.1em;font-family:var(--ft)">Ainda por descobrir</div>');
+    lkVis.forEach(function(a){
+      rows.push('<div class="ci off"><div class="ciw" style="filter:blur(2px)">'+a.icon+'</div>'+
+        '<div><div class="cn" style="filter:blur(3px)">???????????</div>'+
+        '<div class="cm" style="filter:blur(2px)">Uma conquista ainda por revelar.</div></div></div>');
+    });
+  }
+  // hidden locked — just a count hint
+  if(lkHid.length){
+    rows.push('<div style="margin:14px 0 6px;font-size:10px;color:var(--tm);font-style:italic">+ '+lkHid.length+' conquista'+(lkHid.length>1?'s':'')+' invisível'+(lkHid.length>1?'is':'')+' aguardam ser descoberta'+(lkHid.length>1?'s':'')+' na jornada.</div>');
+  }
+  clist.innerHTML=rows.join('');
+  // items
+  var ilistc=document.getElementById('ilistc');
+  if(!ilistc)return;
+  ilistc.innerHTML=ITEMS.map(function(it){
+    var on=S.ach.includes(it.ach)||(it.ach==='grande_travessia'&&S.grandeDone);
+    var dateStr=on&&S.itemDates&&S.itemDates[it.ach]?' — '+fmtDate(S.itemDates[it.ach]):'';
+    return '<div class="ci '+(on?'on':'off')+'">'+
+      '<div class="ciw">'+(on?it.icon:'·')+'</div>'+
+      '<div><div class="cn">'+(on?it.n:'???')+'</div>'+
+      '<div class="cm">'+(on?'"'+it.d+'"':'Item ainda não descoberto.')+dateStr+'</div></div></div>';
+  }).join('');
 }
 
 function renderWeight(){
@@ -608,8 +1021,7 @@ function doMission(id){
   const card=document.getElementById('mi-'+id);
   if(card){card.classList.add('done','zap');card.onclick=null;const g=document.createElement('div');g.className='cglow';card.appendChild(g);setTimeout(()=>g.remove(),800)}
   renderSL();renderSR();
-  const done=Object.values(S.tdm).filter(Boolean).length;
-  document.getElementById('mprog').textContent=done+' / '+MISSIONS.length;
+  updateMprog();
   const mc=document.querySelector('#mi-'+id+' .mxp');if(mc)mc.textContent='✓';
   showToast(res.m.t,'— Tariel');
   if(res.didLvl)setTimeout(()=>showLvlUp(curLevel()),1200);
@@ -618,6 +1030,7 @@ function doMission(id){
 
 function regW(){
   const inp=document.getElementById('winp');
+  if(!inp)return;
   const val=parseFloat(inp.value);
   if(isNaN(val)||val<30||val>300){inp.style.borderColor='var(--a5)';return}
   inp.style.borderColor='';
@@ -673,7 +1086,7 @@ document.querySelectorAll('.ntab').forEach(t=>{
 let obCls='';
 function selCls(id){obCls=id;document.querySelectorAll('.cc').forEach(c=>c.classList.toggle('on',c.dataset.cls===id));document.getElementById('ob1btn').disabled=false}
 function obn(){
-  const step=document.querySelector('.ostep.on').id;
+  const stepEl=document.querySelector('.ostep.on');if(!stepEl)return;const step=stepEl.id;
   if(step==='os0'){
     const v=document.getElementById('ocn').value.trim();
     if(!v)return;
@@ -708,6 +1121,322 @@ function startQuotes(){
 function resetApp(){if(confirm('Apagar todos os dados e recomeçar a jornada?')){localStorage.removeItem(SK);location.reload()}}
 
 // ═══════════════════════════════════════
+
+// ═══════════════════════════════════════
+// CUSTOM TASKS
+// ═══════════════════════════════════════
+const XP_TABLE={
+  'Alimentação':{leve:8,normal:12,intenso:18},
+  'Movimento':{leve:10,normal:15,intenso:22},
+  'Cuidado Mental':{leve:7,normal:10,intenso:15},
+  'Livre':{leve:6,normal:10,intenso:16},
+};
+const CTASK_TARIEL={
+  leve:['Cada gesto de cuidado, por menor que seja, deixa uma marca. Você escolheu agir — e isso importa.','O passo leve ainda é um passo. Você fez a sua parte hoje.','Gentileza consigo mesmo também é prática. Você cumpriu o que escolheu.'],
+  normal:['Você criou essa missão e a cumpriu. Isso diz muito sobre quem você está se tornando.','A missão que você escolheu para si mesmo foi cumprida. Há uma força silenciosa nesse gesto.','Você disse a si mesmo: farei isso. E fez. Esse ciclo é o que constrói tudo.'],
+  intenso:['Isso exigiu de você — e você entregou. Não subestime o que acabou de fazer.','Missões intensas deixam rastros profundos. Você sentirá isso nos próximos dias.','Você foi além do fácil hoje. Esse esforço fica registrado na sua jornada.'],
+};
+let _ctaskEdit=null;
+let _selCat='';
+let _selEff='';
+
+function calcXP(cat,eff){return(XP_TABLE[cat]&&XP_TABLE[cat][eff])||10}
+
+function openCtaskModal(editId){
+  _ctaskEdit=editId||null;
+  _selCat='';_selEff='';
+  document.querySelectorAll('.cm-pill').forEach(p=>p.classList.remove('on','eff-on-leve','eff-on-normal','eff-on-intenso'));
+  const inp=document.getElementById('ctask-name');
+  if(inp)inp.value='';
+  if(editId!==null&&editId!==undefined){
+    const t=(S.ctasks||[]).find(x=>x.id===editId);
+    if(t){
+      if(inp)inp.value=t.name;
+      _selCat=t.cat;_selEff=t.eff;
+      document.querySelectorAll('#ctask-cats .cm-pill').forEach(p=>{if(p.dataset.val===t.cat)p.classList.add('on')});
+      document.querySelectorAll('#ctask-effs .cm-pill').forEach(p=>{if(p.dataset.val===t.eff)p.classList.add('eff-on-'+t.eff)});
+    }
+  }
+  updateXpPreview();
+  document.getElementById('ctask-modal').classList.add('show');
+  if(inp)setTimeout(()=>inp.focus(),100);
+}
+function closeCtaskModal(){document.getElementById('ctask-modal').classList.remove('show')}
+
+function selectPill(el,type){
+  if(type==='cat'){
+    document.querySelectorAll('#ctask-cats .cm-pill').forEach(p=>p.classList.remove('on'));
+    el.classList.add('on');
+    _selCat=el.dataset.val;
+  } else {
+    document.querySelectorAll('#ctask-effs .cm-pill').forEach(p=>p.classList.remove('eff-on-leve','eff-on-normal','eff-on-intenso'));
+    el.classList.add('eff-on-'+el.dataset.val);
+    _selEff=el.dataset.val;
+  }
+  updateXpPreview();
+}
+
+function updateXpPreview(){
+  const name=document.getElementById('ctask-name')?.value.trim()||'';
+  const prev=document.getElementById('ctask-xp-preview');
+  const btn=document.getElementById('ctask-save-btn');
+  const ready=name&&_selCat&&_selEff;
+  if(btn)btn.disabled=!ready;
+  if(!prev)return;
+  if(!ready){prev.innerHTML='Escolha uma categoria e nível de esforço para ver o XP gerado.';return}
+  const xp=calcXP(_selCat,_selEff);
+  const effLabel={leve:'Leve',normal:'Normal',intenso:'Intenso'}[_selEff]||_selEff;
+  prev.innerHTML=`Esta missão vai gerar <span>+${xp} Luz Interior</span> ao ser concluída. Esforço ${effLabel}, categoria ${_selCat}.`;
+}
+
+function saveCtask(){
+  const name=document.getElementById('ctask-name')?.value.trim();
+  if(!name||!_selCat||!_selEff)return;
+  if(!S.ctasks)S.ctasks=[];
+  if(_ctaskEdit!==null&&_ctaskEdit!==undefined){
+    const idx=S.ctasks.findIndex(t=>t.id===_ctaskEdit);
+    if(idx>=0){S.ctasks[idx].name=name;S.ctasks[idx].cat=_selCat;S.ctasks[idx].eff=_selEff;S.ctasks[idx].xp=calcXP(_selCat,_selEff)}
+  } else {
+    const id='ct_'+Date.now();
+    S.ctasks.push({id,name,cat:_selCat,eff:_selEff,xp:calcXP(_selCat,_selEff),paused:false,created:todayStr()});
+    showToast('Missão "'+name+'" adicionada à sua jornada. Ela estará disponível todos os dias.','— Tariel');
+  }
+  save();closeCtaskModal();renderCustomTasks();updateMprog();
+}
+
+function renderCustomTasks(){
+  const list=document.getElementById('ctask-list');
+  if(!list)return;
+  const tasks=(S.ctasks||[]);
+  if(!tasks.length){list.innerHTML='';return}
+  list.innerHTML=tasks.map((t,i)=>{
+    const done=!!( (S.ctdm||{})[t.id] );
+    const paused=!!t.paused;
+    const effClass='eff-'+t.eff;
+    const effLabel={leve:'Leve',normal:'Normal',intenso:'Intenso'}[t.eff]||t.eff;
+    return`<div class="mi custom${done?' done':''}${paused?' paused':''} fi s${Math.min(i+1,5)}" id="cmi-${t.id}"${(!done&&!paused)?` onclick="doCtask('${t.id}')"`:''}><div class="mchk"></div><div class="mbody"><div class="mn">${t.name}</div><span class="mcat">${t.cat}</span><span class="effort-badge ${effClass}">${effLabel}</span></div><div class="mxp">${done?'✓':paused?'—':'+'+t.xp}</div><div class="mi-actions">
+  <button class="mi-act-btn" title="${paused?'Retomar missão':'Pausar missão'}" onclick="event.stopPropagation();togglePauseCtask('${t.id}')">${paused?'▶':'⏸'}</button>
+  <button class="mi-act-btn" title="Editar missão" onclick="event.stopPropagation();openCtaskModal('${t.id}')">✎</button>
+  <button class="mi-act-btn" title="Remover missão" onclick="event.stopPropagation();removeCtask('${t.id}')">✕</button>
+</div></div>`;
+  }).join('');
+}
+
+function doCtask(id){
+  if(!S.ctdm)S.ctdm={};
+  if(S.ctdm[id])return;
+  const t=(S.ctasks||[]).find(x=>x.id===id);
+  if(!t||t.paused)return;
+  const prevLvl=curLevel().l;
+  S.ctdm[id]=true;
+  S.xp+=t.xp;S.total++;
+  if(S.fog>=60)S.highfog++;
+  S.fog=Math.max(0,S.fog-2);
+  save();
+  const card=document.getElementById('cmi-'+id);
+  if(card){card.classList.add('done','zap');card.onclick=null;const g=document.createElement('div');g.className='cglow';card.appendChild(g);setTimeout(()=>g.remove(),800)}
+  const xpEl=card?card.querySelector('.mxp'):null;if(xpEl)xpEl.textContent='✓';
+  renderSL();renderSR();updateMprog();
+  const msgs=CTASK_TARIEL[t.eff]||CTASK_TARIEL.normal;
+  showToast(rnd(msgs),'— Tariel');
+  const fresh=checkAch();
+  const newLvl=curLevel().l;
+  if(newLvl>prevLvl)setTimeout(()=>showLvlUp(curLevel()),1200);
+  if(fresh.length)setTimeout(()=>{showToast('"'+fresh[0].msg+'"','Conquista: '+fresh[0].n);renderConquests()},2200);
+}
+
+function togglePauseCtask(id){
+  const t=(S.ctasks||[]).find(x=>x.id===id);
+  if(!t)return;
+  t.paused=!t.paused;
+  save();renderCustomTasks();updateMprog();
+  const msg=t.paused?'Missão pausada. Ela fica guardada aqui, sem pressão. Retome quando sentir que é hora.':'Missão retomada. Bem-vindo de volta a ela.';
+  showToast(msg,'— Tariel');
+}
+
+function removeCtask(id){
+  const t=(S.ctasks||[]).find(x=>x.id===id);
+  const name=t?t.name:'esta missão';
+  if(!confirm('Remover a missão "'+name+'"?\n\nEla sairá da sua jornada. Você pode criar uma parecida quando quiser.'))return;
+  S.ctasks=(S.ctasks||[]).filter(x=>x.id!==id);
+  if(S.ctdm)delete S.ctdm[id];
+  save();renderCustomTasks();updateMprog();
+  showToast('Missão removida. A jornada continua sendo sua — você decide o que faz parte dela.','— Tariel');
+}
+
+
+// Close modal on backdrop click
+document.getElementById('ctask-modal').addEventListener('click',function(e){if(e.target===this)closeCtaskModal()});
+
+
+// ═══════════════════════════════════════
+// CONSEQUENCE SYSTEM
+// ═══════════════════════════════════════
+const CONSEQ_MSGS=[
+  {title:'A névoa ficou um pouco mais densa',msg:'Hoje foi mais difícil com a alimentação. A névoa aumentou um pouco — não como punição, mas como reflexo natural do dia. Amanhã é uma nova chance de cuidar de si.',icon:'🌫'},
+  {title:'Um dia mais nebuloso passou',msg:'Não conseguir cumprir as missões de alimentação hoje não apaga o que você já construiu. A névoa é passageira. Você permanece.',icon:'🌑'},
+  {title:'A névoa cresceu esta noite',msg:'Há dias em que o cuidado com a alimentação escapa. Isso acontece. A névoa reflete isso simbolicamente — mas sua jornada não regride. Só continua.',icon:'🌫'},
+  {title:'Um véu mais espesso esta noite',msg:'Amanhã é uma nova chance de cuidar de si. A trilha não desapareceu — ela só está um pouco mais encoberta agora. Isso passa.',icon:'🌒'},
+];
+const CONSEQ_MSGS_MILD=[
+  {title:'Um leve acréscimo na névoa',msg:'Uma das missões de alimentação ficou para trás hoje. A névoa ficou um pouquinho mais densa — nada que um dia de cuidado não dissolva.',icon:'🌤'},
+  {title:'A névoa cresceu levemente',msg:'Não conseguiu completar todas as missões de alimentação. Tudo bem. A névoa reflete isso de forma leve. Amanhã você pode tentar de novo, sem peso.',icon:'🌥'},
+];
+
+let _pendingCompLocal=null;
+
+function showFogConsequence(){
+  const p=S.pendingComp;
+  if(!p||p._accepted||S._consecShown)return;
+  S._consecShown=true;save();
+  _pendingCompLocal=p;
+  const severe=p.fogIncrease>=10;
+  const pool=severe?CONSEQ_MSGS:CONSEQ_MSGS_MILD;
+  const chosen=pool[Math.floor(Math.random()*pool.length)];
+  document.getElementById('fcons-icon').textContent=chosen.icon;
+  document.getElementById('fcons-title').textContent=chosen.title;
+  document.getElementById('fcons-msg').textContent=chosen.msg;
+  // Fog bar
+  const pct=Math.round(p.fogNow);
+  document.getElementById('fcons-fog-fill').style.width='0%';
+  document.getElementById('fcons-fog-pct').textContent=pct+'%';
+  setTimeout(()=>{
+    document.getElementById('fcons-fog-fill').style.width=pct+'%';
+  },300);
+  // Compensation task
+  const comp=p.comp;
+  const compEl=document.getElementById('fcons-comp');
+  const acceptBtn=document.getElementById('fcons-accept-btn');
+  if(comp&&!p._compAdded){
+    compEl.style.display='block';
+    document.getElementById('fcons-comp-task').textContent='"'+comp.name+'" — '+comp.desc;
+    document.getElementById('fcons-comp-xp').textContent='+'+comp.xp+' Luz Interior ao concluir';
+    if(acceptBtn)acceptBtn.style.display='';
+  } else {
+    compEl.style.display='none';
+    if(acceptBtn)acceptBtn.style.display='none';
+  }
+  // Show modal
+  document.getElementById('fog-consequence').classList.add('show');
+  // Animate fog bar in sidebar
+  const fb=document.getElementById('fogfb');
+  if(fb)fb.classList.add('fog-surge');
+  setTimeout(()=>{if(fb)fb.classList.remove('fog-surge')},1600);
+}
+
+function closeFogConsequence(){
+  document.getElementById('fog-consequence').classList.remove('show');
+  renderSL(); // refresh sidebar fog display
+}
+
+function acceptCompensation(){
+  if(!_pendingCompLocal||!_pendingCompLocal.comp)return;
+  const comp=_pendingCompLocal.comp;
+  if(S.pendingComp&&!S.pendingComp._compAdded){
+    S.pendingComp._compAdded=true;
+    // Add as a custom task if not already there
+    if(!S.ctasks)S.ctasks=[];
+    const exists=S.ctasks.find(t=>t.id===comp.id);
+    if(!exists){
+      S.ctasks.push({id:comp.id,name:comp.name,cat:comp.cat,eff:'leve',xp:comp.xp,paused:false,created:todayStr(),isComp:true});
+    }
+    save();
+    renderCustomTasks();updateMprog();
+  }
+  document.getElementById('fcons-accept-btn').disabled=true;
+  document.getElementById('fcons-accept-btn').textContent='Adicionada à jornada ✓';
+  setTimeout(()=>{
+    closeFogConsequence();
+    showToast('"'+comp.name+'" foi adicionada às suas missões de hoje. Um pequeno gesto de cuidado já é suficiente.','— Tariel');
+  },800);
+}
+
+// Backdrop click
+document.getElementById('fog-consequence').addEventListener('click',function(e){if(e.target===this)closeFogConsequence();});
+var _pmEl=document.getElementById('personal-modal');
+if(_pmEl)_pmEl.addEventListener('click',function(e){if(e.target===this)closePersonalGoal();});
+
+
+// ═══════════════════════════════════════
+// SUPERCONQUISTA — A GRANDE TRAVESSIA
+// ═══════════════════════════════════════
+function showGrandeTravessia(){
+  S.ach.push('grande_travessia');
+  if(!S.itemDates)S.itemDates={};
+  S.itemDates['grande_travessia']=todayStr();
+  save();
+  var ov=document.getElementById('grande-overlay');
+  if(!ov)return;
+  ov.classList.add('show');
+  // Animate text lines in sequence
+  var lines=ov.querySelectorAll('.gt-line');
+  lines.forEach(function(l,i){
+    l.style.opacity='0';
+    l.style.transform='translateY(10px)';
+    setTimeout(function(){
+      l.style.transition='opacity .8s ease, transform .8s ease';
+      l.style.opacity='1';
+      l.style.transform='translateY(0)';
+    },600+i*900);
+  });
+  // Show footer after all lines
+  var footer=ov.querySelector('.gt-footer');
+  if(footer){
+    footer.style.opacity='0';
+    setTimeout(function(){
+      footer.style.transition='opacity 1s ease';
+      footer.style.opacity='1';
+    },600+lines.length*900+400);
+  }
+  renderConquests();
+  renderItems();
+}
+
+function closeGrandeTravessia(){
+  var ov=document.getElementById('grande-overlay');
+  if(ov)ov.classList.remove('show');
+  showToast('A Relíquia da Travessia foi adicionada ao seu inventário. Ela é sua.','— Stella & Tariel');
+}
+
+// ── Personal goal modal ──
+function openPersonalGoal(){
+  var m=document.getElementById('personal-modal');
+  if(m)m.classList.add('show');
+  var inp=document.getElementById('personal-name-inp');
+  if(inp){
+    if(S.personalGoalName)inp.value=S.personalGoalName;
+    setTimeout(function(){inp.focus()},100);
+  }
+  var doneBtn=document.getElementById('pm-done-btn');
+  if(doneBtn)doneBtn.style.display=S.personalGoalName&&!S.personalGoalDone?'':'none';
+}
+function closePersonalGoal(){
+  var m=document.getElementById('personal-modal');
+  if(m)m.classList.remove('show');
+}
+function savePersonalGoal(){
+  var inp=document.getElementById('personal-name-inp');
+  var name=inp?inp.value.trim():'';
+  if(!name)return;
+  S.personalGoalName=name;
+  save();
+  closePersonalGoal();
+  renderConquests();
+  showToast('"'+name+'" foi registrada como sua conquista pessoal. Quando você concluir, volte aqui e marque.','— Tariel');
+}
+function markPersonalGoalDone(){
+  if(!S.personalGoalName){openPersonalGoal();return;}
+  S.personalGoalDone=true;
+  var fresh=checkAch();
+  save();
+  renderConquests();
+  if(fresh.length){
+    showToast('"'+fresh[0].msg+'"','Conquista: '+fresh[0].n);
+  } else {
+    showToast('"'+S.personalGoalName+'" concluída. Esse momento é seu — guarde-o.','— Tariel');
+  }
+}
+
 // BOOT
 // ═══════════════════════════════════════
 load();
@@ -725,7 +1454,13 @@ if(S.firstRun){
   } else {
     setTimeout(()=>showToast(greet,'— Tariel'),900);
   }
+  // Show consequence modal if there's a pending one from yesterday
+  if(S.pendingComp&&!S.pendingComp._accepted&&!S._consecShown){
+    setTimeout(()=>showFogConsequence(),2200);
+  }
 }
 </script>
+
+
 </body>
 </html>
