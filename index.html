@@ -13,7 +13,7 @@
 --t9:#04231f;--t7:#0a4a42;--t5:#1a7a6e;--t4:#2a9e8e;--t3:#4ec4b0;--t2:#8edbd0;--t1:#c4efea;
 --a9:#1a0d00;--a7:#5a3000;--a5:#a85800;--a4:#d47800;--a3:#f09820;--a2:#f8c870;--a1:#fde8b8;
 --f9:#0e0b18;--f7:#2a2040;--f5:#4a3a70;--f4:#6a52a0;--f3:#9070c8;--f2:#bba8e0;--f1:#e0d8f4;
---tp:#d4cfc8;--ts:#8a8880;--tm:#4a4845;--tg:#c4efea;
+--tp:#d8d4cd;--ts:#aaa69e;--tm:#706c68;--tg:#c4efea;
 --bs:rgba(45,158,142,0.08);--bf:rgba(45,158,142,0.18);--bm:rgba(45,158,142,0.32);
 --eo:cubic-bezier(0.16,1,0.3,1);--ei:cubic-bezier(0.4,0,0.2,1);
 --ft:'Cinzel',serif;--fb:'Crimson Text',serif;--fm:'JetBrains Mono',monospace;
@@ -58,14 +58,14 @@ nav{display:flex;gap:4px}
 .fogn{font-size:11px;color:var(--f3);font-style:italic}
 .fogtr{height:3px;background:rgba(74,58,112,.15);border-radius:2px;overflow:hidden;margin-bottom:7px}
 .fogf{height:100%;background:linear-gradient(90deg,var(--f7),var(--f4));border-radius:2px;transition:width .8s var(--eo)}
-.fogd{font-size:12px;color:var(--f2);font-style:italic;line-height:1.5}
+.fogd{font-size:13px;color:var(--f2);font-style:italic;line-height:1.6}
 .smtit{font-size:10px;color:var(--tm);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
 .igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
 .isl{aspect-ratio:1;background:var(--surface);border:1px solid var(--bs);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:16px;position:relative;cursor:help;transition:border-color .2s,transform .15s}
 .isl.on{border-color:var(--bf);background:var(--raised)}
 .isl.on:hover{border-color:var(--a4);transform:scale(1.06)}
 .isl.off{opacity:.2;filter:grayscale(1)}
-.ittip{display:none;position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--bf);border-radius:3px;padding:7px 9px;width:150px;font-size:11px;color:var(--ts);font-style:italic;line-height:1.5;z-index:200;white-space:normal;pointer-events:none}
+.ittip{display:none;position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:rgba(26,35,46,.98);border:1px solid var(--bf);border-radius:3px;padding:9px 11px;width:160px;font-size:12px;color:var(--tp);font-style:italic;line-height:1.65;z-index:200;white-space:normal;pointer-events:none}
 .isl:hover .ittip{display:block}
 
 /* ── MAIN ── */
@@ -76,11 +76,11 @@ nav{display:flex;gap:4px}
 @keyframes fd{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-10px,-5px) scale(1.02)}100%{transform:translate(8px,6px) scale(.99)}}
 
 /* Tariel banner */
-.tbann{position:relative;padding:20px 24px;background:var(--surface);border:1px solid var(--bs);border-left:3px solid var(--t5);border-radius:0 3px 3px 0;margin-bottom:24px;overflow:hidden;display:flex;gap:16px;align-items:flex-start;z-index:1}
+.tbann{position:relative;padding:22px 26px;background:rgba(28,36,46,.95);border:1px solid rgba(45,158,142,.14);border-left:3px solid var(--t5);border-radius:0 3px 3px 0;margin-bottom:24px;overflow:hidden;display:flex;gap:16px;align-items:flex-start;z-index:1}
 .tbann::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 0% 50%,rgba(26,122,110,.07) 0%,transparent 60%);pointer-events:none}
 .tav{width:48px;height:48px;border-radius:50%;background:var(--t9);border:1px solid var(--t5);flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
 .ttxt{flex:1;position:relative;z-index:1}
-.tq{font-size:15px;color:var(--ts);font-style:italic;line-height:1.7;transition:opacity .4s}
+.tq{font-size:15px;color:var(--tp);font-style:italic;line-height:1.85;transition:opacity .4s}
 .tsign{font-size:11px;color:var(--t5);margin-top:5px;font-family:var(--ft);letter-spacing:.08em}
 
 /* Missions */
@@ -88,7 +88,7 @@ nav{display:flex;gap:4px}
 .mtit{font-family:var(--ft);font-size:13px;letter-spacing:.1em;color:var(--tm);text-transform:uppercase}
 .mprog{font-family:var(--fm);font-size:11px;color:var(--t5)}
 .mlist{display:flex;flex-direction:column;gap:9px;position:relative;z-index:1}
-.mi{display:flex;align-items:flex-start;gap:13px;padding:14px 16px;background:var(--surface);border:1px solid var(--bs);border-radius:2px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;position:relative;overflow:hidden}
+.mi{display:flex;align-items:flex-start;gap:13px;padding:15px 17px;background:rgba(22,29,37,.98);border:1px solid var(--bs);border-radius:2px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;position:relative;overflow:hidden}
 .mi::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--t5);opacity:0;transition:opacity .2s}
 .mi:hover{border-color:var(--bf);background:var(--raised);transform:translateX(2px)}
 .mi:hover::before{opacity:1}
@@ -102,7 +102,7 @@ nav{display:flex;gap:4px}
 .mbody{flex:1;min-width:0}
 .mn{font-family:var(--ft);font-size:13px;color:var(--tp);font-weight:500;margin-bottom:2px;letter-spacing:.04em}
 .mi.done .mn{text-decoration:line-through;color:var(--tm)}
-.md{font-size:12px;color:var(--ts);line-height:1.5}
+.md{font-size:13px;color:var(--ts);line-height:1.65}
 .mcat{display:inline-block;padding:2px 7px;background:rgba(26,122,110,.08);border:1px solid var(--bs);border-radius:1px;font-size:9px;color:var(--t5);letter-spacing:.08em;text-transform:uppercase;margin-top:3px;font-family:var(--fm)}
 .mxp{font-family:var(--fm);font-size:12px;color:var(--a4);flex-shrink:0;align-self:center;font-weight:500}
 .mi.done .mxp{color:var(--tm)}
@@ -112,22 +112,22 @@ nav{display:flex;gap:4px}
 /* Toast */
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(18px);width:min(540px,90vw);background:var(--card);border:1px solid var(--t7);border-left:3px solid var(--t4);border-radius:2px;padding:14px 18px;display:flex;gap:13px;align-items:flex-start;z-index:500;opacity:0;pointer-events:none;transition:opacity .3s var(--eo),transform .3s var(--eo);backdrop-filter:blur(12px)}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.tc{font-size:14px;color:var(--ts);font-style:italic;line-height:1.6}
+.tc{font-size:14.5px;color:var(--tp);font-style:italic;line-height:1.75}
 .ts2{font-size:10px;color:var(--t5);margin-top:3px;font-family:var(--ft);letter-spacing:.08em}
 
 /* Conquistas */
 .clist{display:grid;gap:11px}
-.ci{display:flex;gap:15px;padding:16px 18px;background:var(--surface);border:1px solid var(--bs);border-radius:2px;transition:border-color .2s}
+.ci{display:flex;gap:15px;padding:16px 18px;background:rgba(22,29,37,.96);border:1px solid var(--bs);border-radius:2px;transition:border-color .2s}
 .ci.on{border-left:3px solid var(--a5)}
 .ci.off{opacity:.3;filter:saturate(0)}
 .ci.on:hover{border-color:var(--a4)}
 .ciw{width:42px;height:42px;background:var(--raised);border:1px solid var(--bf);border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:20px}
 .cn{font-family:var(--ft);font-size:13px;color:var(--tp);margin-bottom:3px;letter-spacing:.04em}
-.cm{font-size:12px;color:var(--ts);font-style:italic;line-height:1.5}
+.cm{font-size:13px;color:var(--ts);font-style:italic;line-height:1.68}
 .cd{font-family:var(--fm);font-size:9px;color:var(--a5);margin-top:3px}
 
 /* Weight screen */
-.wtar{padding:18px 22px;background:var(--surface);border:1px solid var(--bs);border-left:3px solid var(--t5);border-radius:0 2px 2px 0;margin-bottom:22px;font-size:14px;color:var(--ts);font-style:italic;line-height:1.7}
+.wtar{padding:20px 24px;background:rgba(28,36,46,.95);border:1px solid rgba(45,158,142,.14);border-left:3px solid var(--t5);border-radius:0 2px 2px 0;margin-bottom:22px;font-size:15px;color:var(--tp);font-style:italic;line-height:1.85}
 .wtar .tsign{font-size:11px;color:var(--t5);margin-top:5px;font-family:var(--ft);letter-spacing:.08em;display:block;font-style:normal}
 .wform{display:flex;gap:11px;margin-bottom:22px;align-items:flex-end}
 .wig{flex:1}
@@ -146,7 +146,7 @@ nav{display:flex;gap:4px}
 .xpb{padding:2px 7px;background:rgba(240,152,32,.1);border:1px solid rgba(240,152,32,.2);border-radius:1px;font-size:9px;color:var(--a3);font-family:var(--fm)}
 .shdr{margin-bottom:22px}
 .stit{font-family:var(--ft);font-size:19px;font-weight:500;color:var(--tp);letter-spacing:.06em}
-.ssub{font-size:13px;color:var(--tm);font-style:italic;margin-top:3px}
+.ssub{font-size:13px;color:var(--ts);font-style:italic;margin-top:3px;line-height:1.6}
 
 /* Sidebar right */
 #sr{grid-column:3;grid-row:2;padding:22px 18px;border-left:1px solid var(--bs);display:flex;flex-direction:column;gap:18px;position:sticky;top:57px;height:calc(100vh - 57px);overflow-y:auto}
@@ -158,7 +158,7 @@ nav{display:flex;gap:4px}
 .wdl{font-family:var(--fm);font-size:8px;color:var(--tm)}
 .wdd{width:5px;height:5px;border-radius:50%;background:var(--t7)}
 .wday.act .wdd{background:var(--t4)}
-.dmsg{padding:12px;background:var(--raised);border:1px solid var(--bs);border-radius:2px;font-size:12px;color:var(--ts);font-style:italic;line-height:1.6}
+.dmsg{padding:14px;background:rgba(28,36,46,.9);border:1px solid var(--bs);border-radius:2px;font-size:13px;color:var(--ts);font-style:italic;line-height:1.7}
 .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
 .sc{padding:11px;background:var(--surface);border:1px solid var(--bs);border-radius:2px;text-align:center}
 .sv{font-family:var(--fm);font-size:20px;color:var(--t3);font-weight:500;line-height:1;margin-bottom:3px}
@@ -167,12 +167,12 @@ nav{display:flex;gap:4px}
 /* Level up */
 #luo{position:fixed;inset:0;background:rgba(10,13,15,.9);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(8px)}
 #luo.show{opacity:1;pointer-events:all}
-.luc{text-align:center;padding:44px 52px;background:var(--card);border:1px solid var(--t7);border-radius:2px;max-width:400px;position:relative;overflow:hidden}
+.luc{text-align:center;padding:44px 52px;background:rgba(26,35,46,.98);border:1px solid var(--t7);border-radius:2px;max-width:400px;position:relative;overflow:hidden}
 .luc::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(26,122,110,.15) 0%,transparent 70%);pointer-events:none}
 .lug{font-size:44px;margin-bottom:14px;display:block;filter:drop-shadow(0 0 20px rgba(78,196,176,.4))}
 .lut{font-family:var(--ft);font-size:10px;color:var(--t5);letter-spacing:.2em;text-transform:uppercase;margin-bottom:7px}
 .lun{font-family:var(--ft);font-size:24px;color:var(--tp);letter-spacing:.06em;margin-bottom:14px}
-.lum{font-size:14px;color:var(--ts);font-style:italic;line-height:1.7;margin-bottom:22px}
+.lum{font-size:15px;color:var(--tp);font-style:italic;line-height:1.85;margin-bottom:22px}
 .bcont{padding:9px 26px;background:var(--t9);border:1px solid var(--t7);border-radius:2px;color:var(--t3);font-family:var(--ft);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s}
 .bcont:hover{background:var(--t7)}
 
@@ -241,10 +241,10 @@ nav{display:flex;gap:4px}
 /* ── MODAL ── */
 #ctask-modal{position:fixed;inset:0;background:rgba(10,13,15,.85);z-index:800;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
 #ctask-modal.show{display:flex}
-.ctask-modal-inner{background:var(--card);border:1px solid var(--bf);border-radius:3px;padding:28px 28px 24px;width:100%;max-width:440px;position:relative}
+.ctask-modal-inner{background:rgba(26,33,42,.99);border:1px solid var(--bf);border-radius:3px;padding:28px 28px 24px;width:100%;max-width:440px;position:relative}
 .ctask-modal-inner::before{content:'';position:absolute;inset:0;border-radius:3px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(26,122,110,.08) 0%,transparent 60%);pointer-events:none}
 .cm-title{font-family:var(--ft);font-size:16px;color:var(--tp);letter-spacing:.06em;margin-bottom:4px}
-.cm-sub{font-size:13px;color:var(--tm);font-style:italic;margin-bottom:22px;line-height:1.5}
+.cm-sub{font-size:13px;color:var(--ts);font-style:italic;margin-bottom:22px;line-height:1.65}
 .cm-label{font-family:var(--ft);font-size:10px;color:var(--ts);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:6px;margin-top:16px}
 .cm-label:first-of-type{margin-top:0}
 .cm-input{width:100%;background:var(--surface);border:1px solid var(--bf);border-radius:2px;padding:9px 13px;font-family:var(--fb);font-size:16px;color:var(--tp);outline:none;transition:border-color .2s}
@@ -269,15 +269,15 @@ nav{display:flex;gap:4px}
 /* ── CONSEQUENCE SYSTEM ── */
 #fog-consequence{position:fixed;inset:0;z-index:600;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px);background:rgba(10,13,15,.82)}
 #fog-consequence.show{display:flex}
-.fcons-inner{max-width:460px;width:100%;background:var(--card);border:1px solid rgba(144,112,200,.3);border-radius:3px;overflow:hidden;position:relative}
+.fcons-inner{max-width:460px;width:100%;background:rgba(26,33,42,.99);border:1px solid rgba(144,112,200,.3);border-radius:3px;overflow:hidden;position:relative}
 .fcons-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(74,58,112,.25) 0%,transparent 60%);pointer-events:none}
 .fcons-fog-bar{height:4px;background:linear-gradient(90deg,var(--f7),var(--f4),var(--f3));animation:fcbar 2s ease-in-out infinite alternate}
 @keyframes fcbar{0%{opacity:.5}100%{opacity:1}}
-.fcons-body{padding:28px 28px 22px;position:relative;z-index:1}
+.fcons-body{padding:28px 28px 22px;position:relative;z-index:1;background:rgba(21,27,34,.5)}
 .fcons-icon{font-size:32px;margin-bottom:14px;display:block;filter:drop-shadow(0 0 12px rgba(144,112,200,.5));animation:fciconpulse 3s ease-in-out infinite}
 @keyframes fciconpulse{0%,100%{filter:drop-shadow(0 0 8px rgba(144,112,200,.3))}50%{filter:drop-shadow(0 0 20px rgba(144,112,200,.7))}}
 .fcons-title{font-family:var(--ft);font-size:15px;color:var(--f2);letter-spacing:.06em;margin-bottom:10px}
-.fcons-msg{font-size:14.5px;color:var(--ts);font-style:italic;line-height:1.75;margin-bottom:18px}
+.fcons-msg{font-size:15px;color:var(--tp);font-style:italic;line-height:1.9;margin-bottom:18px}
 .fcons-fog-status{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(74,58,112,.15);border:1px solid rgba(144,112,200,.18);border-radius:2px;margin-bottom:18px}
 .fcons-fog-label{font-size:11px;color:var(--f2);font-family:var(--fm)}
 .fcons-fog-track{flex:1;height:4px;background:rgba(74,58,112,.2);border-radius:2px;overflow:hidden}
@@ -285,7 +285,7 @@ nav{display:flex;gap:4px}
 .fcons-fog-pct{font-family:var(--fm);font-size:10px;color:var(--f3)}
 .fcons-comp{padding:14px 16px;background:rgba(26,122,110,.08);border:1px solid rgba(45,158,142,.2);border-radius:2px;margin-bottom:20px}
 .fcons-comp-label{font-size:10px;color:var(--t4);text-transform:uppercase;letter-spacing:.1em;font-family:var(--ft);margin-bottom:6px}
-.fcons-comp-task{font-size:13.5px;color:var(--tp);font-style:italic;line-height:1.55}
+.fcons-comp-task{font-size:14px;color:var(--tp);font-style:italic;line-height:1.7}
 .fcons-comp-xp{font-family:var(--fm);font-size:10px;color:var(--a3);margin-top:4px}
 .fcons-footer{display:flex;gap:9px}
 .fcons-btn-close{flex:1;padding:10px;background:var(--f9);border:1px solid rgba(144,112,200,.3);border-radius:2px;color:var(--f2);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
@@ -304,14 +304,14 @@ nav{display:flex;gap:4px}
 
 
 /* ── SUPERCONQUISTA ── */
-#grande-overlay{position:fixed;inset:0;background:rgba(5,8,10,.96);z-index:900;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px;text-align:center}
+#grande-overlay{position:fixed;inset:0;background:rgba(3,5,7,.98);z-index:900;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px;text-align:center}
 #grande-overlay.show{display:flex}
 .gt-stella-wrap{margin-bottom:28px;position:relative}
 .gt-stella-glow{width:88px;height:88px;border-radius:50%;background:radial-gradient(circle,rgba(200,120,255,.18) 0%,transparent 70%);border:1px solid rgba(200,120,255,.35);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:36px;filter:drop-shadow(0 0 20px rgba(200,120,255,.4));animation:stellapulse 3s ease-in-out infinite}
 @keyframes stellapulse{0%,100%{filter:drop-shadow(0 0 14px rgba(200,120,255,.3))}50%{filter:drop-shadow(0 0 32px rgba(200,120,255,.6))}}
 .gt-stella-name{font-family:var(--ft);font-size:11px;color:rgba(200,120,255,.7);letter-spacing:.18em;text-transform:uppercase;margin-top:10px}
 .gt-name-lucas{font-family:var(--ft);font-size:26px;color:var(--tp);letter-spacing:.08em;margin-bottom:24px;opacity:0}
-.gt-line{font-size:16px;color:var(--ts);font-style:italic;line-height:1.85;max-width:420px;margin:0 auto 4px;opacity:0}
+.gt-line{font-size:17px;color:#c0bbb4;font-style:italic;line-height:2.0;max-width:440px;margin:0 auto 2px;opacity:0;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .gt-footer{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:32px;opacity:0}
 .gt-item-reveal{font-size:13px;color:var(--a2);font-family:var(--ft);letter-spacing:.06em;border:1px solid rgba(248,200,112,.3);padding:8px 20px;border-radius:2px;background:rgba(200,134,10,.06)}
 .gt-close-btn{padding:10px 28px;background:rgba(200,120,255,.1);border:1px solid rgba(200,120,255,.3);border-radius:2px;color:rgba(200,120,255,.9);font-family:var(--ft);font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s}
@@ -332,7 +332,7 @@ nav{display:flex;gap:4px}
 /* ── PERSONAL GOAL MODAL ── */
 #personal-modal{position:fixed;inset:0;background:rgba(10,13,15,.82);z-index:820;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
 #personal-modal.show{display:flex}
-.pm-inner{background:var(--card);border:1px solid var(--bf);border-radius:3px;padding:26px 26px 22px;width:100%;max-width:400px}
+.pm-inner{background:rgba(26,33,42,.99);border:1px solid var(--bf);border-radius:3px;padding:26px 26px 22px;width:100%;max-width:400px}
 .pm-title{font-family:var(--ft);font-size:15px;color:var(--tp);letter-spacing:.06em;margin-bottom:6px}
 .pm-sub{font-size:13px;color:var(--tm);font-style:italic;line-height:1.6;margin-bottom:20px}
 .pm-inp{width:100%;background:var(--surface);border:1px solid var(--bf);border-radius:2px;padding:9px 13px;font-family:var(--fb);font-size:16px;color:var(--tp);outline:none;margin-bottom:16px;transition:border-color .2s}
@@ -343,6 +343,217 @@ nav{display:flex;gap:4px}
 .pm-save:hover{background:var(--t7)}
 .pm-done-btn{margin-top:10px;width:100%;padding:9px;background:rgba(248,200,112,.08);border:1px solid rgba(248,200,112,.25);border-radius:2px;color:var(--a2);font-family:var(--ft);font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
 .pm-done-btn:hover{background:rgba(248,200,112,.15)}
+
+
+/* ══════════════════════════════════
+   MOCHILA SIMBÓLICA
+══════════════════════════════════ */
+.mochila-altar{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:14px;
+  padding:4px 0 24px;
+}
+.mochila-item{
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  padding:22px 14px 18px;
+  background:rgba(22,29,37,.96);
+  border:1px solid var(--bs);
+  border-radius:3px;
+  cursor:pointer;
+  transition:border-color .25s var(--eo),transform .18s var(--eo),background .25s;
+  position:relative;
+  text-align:center;
+}
+.mochila-item:hover{
+  border-color:rgba(45,158,142,.35);
+  background:rgba(28,38,50,.98);
+  transform:translateY(-2px);
+}
+.mochila-item-icon{
+  font-size:32px;
+  line-height:1;
+  filter:drop-shadow(0 0 10px rgba(78,196,176,.18));
+  transition:filter .3s;
+}
+.mochila-item:hover .mochila-item-icon{
+  filter:drop-shadow(0 0 18px rgba(78,196,176,.38));
+}
+.mochila-item-name{
+  font-family:var(--ft);
+  font-size:11px;
+  color:var(--tp);
+  letter-spacing:.07em;
+  line-height:1.4;
+}
+.mochila-item-fixed::after{
+  content:'';
+  position:absolute;
+  top:8px;right:9px;
+  width:4px;height:4px;
+  border-radius:50%;
+  background:rgba(45,158,142,.5);
+}
+/* Detail panel */
+.mochila-detail{
+  position:relative;
+  padding:26px 28px 22px;
+  background:rgba(22,29,37,.98);
+  border:1px solid rgba(45,158,142,.22);
+  border-left:3px solid var(--t5);
+  border-radius:0 3px 3px 0;
+  margin-top:8px;
+  animation:fiu .3s var(--eo);
+}
+.mochila-detail-close{
+  position:absolute;top:12px;right:14px;
+  background:none;border:none;
+  color:var(--tm);font-size:14px;cursor:pointer;
+  transition:color .15s;
+  padding:2px 6px;
+}
+.mochila-detail-close:hover{color:var(--tp)}
+.mochila-detail-icon{font-size:38px;margin-bottom:12px;line-height:1}
+.mochila-detail-name{
+  font-family:var(--ft);font-size:16px;
+  color:var(--tp);letter-spacing:.06em;margin-bottom:10px;
+}
+.mochila-detail-desc{
+  font-size:14px;color:var(--ts);
+  font-style:italic;line-height:1.75;margin-bottom:10px;
+}
+.mochila-detail-flavor{
+  font-size:13px;color:var(--tm);
+  font-style:italic;line-height:1.7;border-top:1px solid var(--bs);
+  padding-top:10px;margin-top:4px;
+}
+.mochila-detail-date{
+  font-family:var(--fm);font-size:10px;
+  color:var(--tm);margin-top:10px;
+}
+
+/* ══════════════════════════════════
+   DIÁRIO PESSOAL
+══════════════════════════════════ */
+.diario-prompt{
+  font-size:14px;color:var(--ts);
+  font-style:italic;line-height:1.8;
+  margin-bottom:16px;max-width:500px;
+}
+.diario-date-label{
+  font-family:var(--fm);font-size:10px;
+  color:var(--tm);letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:8px;
+}
+.diario-textarea{
+  width:100%;max-width:620px;
+  min-height:180px;
+  background:rgba(18,24,32,.98);
+  border:1px solid rgba(45,158,142,.18);
+  border-radius:2px;
+  padding:18px 20px;
+  font-family:var(--fb);font-size:16px;
+  color:var(--tp);line-height:1.8;
+  resize:vertical;outline:none;
+  transition:border-color .2s;
+  display:block;
+}
+.diario-textarea:focus{border-color:rgba(45,158,142,.4)}
+.diario-textarea::placeholder{color:var(--tm);font-style:italic}
+.diario-footer{
+  display:flex;align-items:center;gap:14px;
+  margin-top:10px;max-width:620px;
+}
+.diario-save-btn{
+  padding:8px 22px;
+  background:var(--t9);border:1px solid var(--t7);
+  border-radius:2px;color:var(--t3);
+  font-family:var(--ft);font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;
+  cursor:pointer;transition:background .2s;
+}
+.diario-save-btn:hover{background:var(--t7)}
+.diario-saved-msg{
+  font-size:12px;color:var(--t5);
+  font-style:italic;opacity:0;
+  transition:opacity .4s;
+}
+.diario-saved-msg.show{opacity:1}
+.diario-history{margin-top:32px;max-width:620px}
+.diario-history-title{
+  font-family:var(--ft);font-size:10px;
+  color:var(--tm);text-transform:uppercase;
+  letter-spacing:.12em;margin-bottom:12px;
+}
+.diario-entry{
+  padding:14px 18px;
+  background:rgba(18,24,32,.7);
+  border:1px solid var(--bs);
+  border-radius:2px;margin-bottom:8px;
+  cursor:pointer;transition:border-color .2s;
+}
+.diario-entry:hover{border-color:rgba(45,158,142,.25)}
+.diario-entry-date{
+  font-family:var(--fm);font-size:10px;
+  color:var(--tm);margin-bottom:6px;
+  text-transform:uppercase;letter-spacing:.06em;
+}
+.diario-entry-preview{
+  font-size:13px;color:var(--ts);
+  font-style:italic;line-height:1.6;
+  overflow:hidden;
+  display:-webkit-box;-webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+.diario-entry.expanded .diario-entry-preview{
+  -webkit-line-clamp:unset;display:block;
+}
+
+/* ══════════════════════════════════
+   LIVRO DE CRÔNICAS
+══════════════════════════════════ */
+.cronicas-book{
+  max-width:560px;
+  display:flex;flex-direction:column;gap:20px;
+}
+.cronica-page{
+  position:relative;
+  padding:28px 32px 24px;
+  background:linear-gradient(160deg,rgba(24,19,14,.98) 0%,rgba(18,15,11,.99) 100%);
+  border:1px solid rgba(200,168,100,.12);
+  border-radius:2px;
+  box-shadow:inset 0 0 40px rgba(0,0,0,.3);
+  animation:fiu .4s var(--eo);
+}
+.cronica-page::before{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(180deg,rgba(200,168,100,.4) 0%,rgba(200,168,100,.08) 100%);
+  border-radius:2px 0 0 2px;
+}
+.cronica-week{
+  font-family:var(--fm);font-size:9px;
+  color:rgba(200,168,100,.5);
+  letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.cronica-text{
+  font-family:var(--fb);font-size:16px;
+  color:rgba(210,200,185,.92);
+  line-height:2.0;font-style:italic;
+  text-indent:1.2em;
+}
+.cronica-text em{font-style:normal;color:rgba(200,168,100,.8)}
+.cronica-seal{
+  margin-top:16px;text-align:right;
+  font-family:var(--ft);font-size:10px;
+  color:rgba(200,168,100,.35);letter-spacing:.12em;
+}
+.cronicas-empty{
+  font-size:14px;color:var(--tm);
+  font-style:italic;line-height:1.8;padding:12px 0;
+}
 
 </style>
 </head>
@@ -381,6 +592,9 @@ nav{display:flex;gap:4px}
     <button class="ntab on" data-scr="home">Jornada</button>
     <button class="ntab" data-scr="conquests">Conquistas</button>
     <button class="ntab" data-scr="weight">Marcos</button>
+    <button class="ntab" data-scr="mochila">Mochila</button>
+    <button class="ntab" data-scr="diario">Diário</button>
+    <button class="ntab" data-scr="cronicas">Crônicas</button>
   </nav>
 </header>
 
@@ -455,6 +669,48 @@ nav{display:flex;gap:4px}
       <div class="whl" id="whl"></div>
     </div>
   </div>
+
+  <!-- MOCHILA SIMBÓLICA -->
+  <div class="scr" id="scr-mochila">
+    <div class="shdr">
+      <div class="stit">Mochila Simbólica</div>
+      <div class="ssub">O que você carrega consigo nesta jornada.</div>
+    </div>
+    <div class="mochila-altar" id="mochila-altar"></div>
+    <div class="mochila-detail" id="mochila-detail" style="display:none">
+      <button class="mochila-detail-close" onclick="closeMochilaDetail()">✕</button>
+      <div class="mochila-detail-icon" id="md-icon"></div>
+      <div class="mochila-detail-name" id="md-name"></div>
+      <div class="mochila-detail-desc" id="md-desc"></div>
+      <div class="mochila-detail-flavor" id="md-flavor"></div>
+      <div class="mochila-detail-date" id="md-date"></div>
+    </div>
+  </div>
+
+  <!-- DIÁRIO PESSOAL -->
+  <div class="scr" id="scr-diario">
+    <div class="shdr">
+      <div class="stit">Diário Pessoal</div>
+    </div>
+    <div class="diario-prompt">Este espaço é seu.<br>Não precisa ser bonito. Não precisa ser longo.<br>Pode ser só uma palavra.</div>
+    <div class="diario-date-label" id="diario-date-label"></div>
+    <textarea class="diario-textarea" id="diario-textarea" placeholder="…" spellcheck="false"></textarea>
+    <div class="diario-footer">
+      <button class="diario-save-btn" onclick="saveDiarioEntry()">Guardar</button>
+      <span class="diario-saved-msg" id="diario-saved-msg"></span>
+    </div>
+    <div class="diario-history" id="diario-history"></div>
+  </div>
+
+  <!-- LIVRO DE CRÔNICAS -->
+  <div class="scr" id="scr-cronicas">
+    <div class="shdr">
+      <div class="stit">Livro de Crônicas</div>
+      <div class="ssub">A história que a jornada escreve por si mesma.</div>
+    </div>
+    <div class="cronicas-book" id="cronicas-book"></div>
+  </div>
+
 </main>
 
 <!-- SIDEBAR RIGHT -->
@@ -730,7 +986,7 @@ const CLASSES=[
 // STATE
 // ═══════════════════════════════════════
 const SK='trilha_eq_v3';
-const DS={name:'',cls:'',xp:0,fog:35,today:'',tdm:{},total:0,mc:{},highfog:0,ach:[],wr:[],days:0,lastday:'',returned:false,returnCount:0,wmap:{},firstRun:true,_retShown:false,ctasks:[],ctdm:{},lastConseqDate:'',pendingComp:null,_consecShown:false,grandeDone:false,personalGoalDone:false,personalGoalName:'',itemDates:{}};
+const DS={name:'',cls:'',xp:0,fog:35,today:'',tdm:{},total:0,mc:{},highfog:0,ach:[],wr:[],days:0,lastday:'',returned:false,returnCount:0,wmap:{},firstRun:true,_retShown:false,ctasks:[],ctdm:{},lastConseqDate:'',pendingComp:null,_consecShown:false,grandeDone:false,personalGoalDone:false,personalGoalName:'',itemDates:{},diary:{},lastCronicaWeek:'',cronicas:[]};
 let S={};
 
 function save(){try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){}}
@@ -848,7 +1104,7 @@ function regWeight(val){
 // ═══════════════════════════════════════
 // RENDER
 // ═══════════════════════════════════════
-function renderAll(){renderSL();renderSR();renderHome();renderConquests();renderWeight()}
+function renderAll(){renderSL();renderSR();renderHome();renderConquests();renderWeight();renderMochila();renderDiario();renderCronicas();}
 
 function renderSL(){
   const c=CLASSES.find(x=>x.id===S.cls)||CLASSES[0];
@@ -1437,6 +1693,207 @@ function markPersonalGoalDone(){
   }
 }
 
+
+// ═══════════════════════════════════════
+// MÓDULO 1 — MOCHILA SIMBÓLICA
+// ═══════════════════════════════════════
+const MOCHILA_ITEMS=[
+  {id:'orb_connection',icon:'🔮',name:'Orbe da Conexão',
+   desc:'Um artefato comum, cheio de portais silenciosos.',
+   flavor:'Ele conecta mundos. Carrega vozes, histórias, e este app. Na palma da sua mão, uma janela que você escolhe abrir ou fechar.',
+   fixed:true,obtainedAt:null},
+  {id:'resin_vigil',icon:'🌿',name:'Resina da Vigília',
+   desc:'Uma pequena âncora para a mente inquieta.',
+   flavor:'Há dias em que mastigar é rezar. Um ritmo simples que traz o pensamento de volta ao corpo. Nenhuma cobrança — só presença.',
+   fixed:false,obtainedAt:null},
+  {id:'seeds_walker',icon:'🫘',name:'Sementes do Caminhante',
+   desc:'Alimento simples para jornadas longas.',
+   flavor:'O que sustenta uma longa caminhada não é grandioso. É humilde, constante, suficiente. Essas sementes sabem disso.',
+   fixed:false,obtainedAt:null},
+  {id:'compass_silent_time',icon:'⌚',name:'Bússola do Tempo Silencioso',
+   desc:'Ela não aponta para onde ir. Apenas lembra que o tempo passa.',
+   flavor:'Não é um juiz. Não é uma cobrança. É apenas um pulso — gentil e neutro — que diz: você está aqui, agora.',
+   fixed:false,obtainedAt:null},
+  {id:'bond_stella',icon:'💍',name:'Laço da Permanência',
+   desc:'Aquilo que permanece, mesmo quando o mundo muda.',
+   flavor:'Algumas presenças não precisam de palavras. Estão apenas aqui — antes, durante e depois de qualquer jornada.',
+   fixed:true,obtainedAt:null},
+];
+
+function renderMochila(){
+  var altar=document.getElementById('mochila-altar');
+  if(!altar)return;
+  altar.innerHTML=MOCHILA_ITEMS.map(function(item){
+    return '<div class="mochila-item'+(item.fixed?' mochila-item-fixed':'')+'" data-mid="'+item.id+'" onclick="openMochilaDetail(this.dataset.mid)">'+
+      '<div class="mochila-item-icon">'+item.icon+'</div>'+
+      '<div class="mochila-item-name">'+item.name+'</div>'+
+      '</div>';
+  }).join('');
+}
+
+function openMochilaDetail(id){
+  var item=MOCHILA_ITEMS.find(function(x){return x.id===id});
+  if(!item)return;
+  var panel=document.getElementById('mochila-detail');
+  if(!panel)return;
+  document.getElementById('md-icon').textContent=item.icon;
+  document.getElementById('md-name').textContent=item.name;
+  document.getElementById('md-desc').textContent=item.desc;
+  document.getElementById('md-flavor').textContent='"'+item.flavor+'"';
+  var dateEl=document.getElementById('md-date');
+  if(item.fixed){
+    dateEl.textContent='';
+  } else if(item.obtainedAt){
+    dateEl.textContent='Carregado desde '+fmtDate(item.obtainedAt);
+  } else {
+    dateEl.textContent='';
+  }
+  panel.style.display='block';
+}
+
+function closeMochilaDetail(){
+  var panel=document.getElementById('mochila-detail');
+  if(panel)panel.style.display='none';
+}
+
+// ═══════════════════════════════════════
+// MÓDULO 2 — DIÁRIO PESSOAL
+// ═══════════════════════════════════════
+var _diarioSaveTimer=null;
+
+function renderDiario(){
+  var lbl=document.getElementById('diario-date-label');
+  if(lbl){
+    var d=new Date();
+    lbl.textContent=d.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  }
+  var ta=document.getElementById('diario-textarea');
+  if(ta){
+    var today=todayStr();
+    var entries=S.diary||{};
+    ta.value=entries[today]||'';
+  }
+  renderDiarioHistory();
+}
+
+function saveDiarioEntry(){
+  var ta=document.getElementById('diario-textarea');
+  if(!ta)return;
+  var text=ta.value;
+  if(!S.diary)S.diary={};
+  if(text.trim()){
+    S.diary[todayStr()]=text;
+  } else {
+    delete S.diary[todayStr()];
+  }
+  save();
+  var msg=document.getElementById('diario-saved-msg');
+  if(msg){
+    msg.textContent='Guardado.';
+    msg.classList.add('show');
+    setTimeout(function(){msg.classList.remove('show')},2200);
+  }
+  renderDiarioHistory();
+}
+
+function renderDiarioHistory(){
+  var hist=document.getElementById('diario-history');
+  if(!hist)return;
+  var entries=S.diary||{};
+  var keys=Object.keys(entries).sort().reverse().filter(function(k){return k!==todayStr()});
+  if(!keys.length){hist.innerHTML='';return}
+  var rows=keys.slice(0,14).map(function(k){
+    var text=entries[k]||'';
+    var preview=text.slice(0,120)+(text.length>120?'…':'');
+    var d=new Date(k+'T12:00:00');
+    var label=d.toLocaleDateString('pt-BR',{weekday:'short',day:'numeric',month:'short'});
+    return '<div class="diario-entry" onclick="this.classList.toggle(&quot;expanded&quot;)">'+
+      '<div class="diario-entry-date">'+label+'</div>'+
+      '<div class="diario-entry-preview">'+escHtml(preview)+'</div>'+
+      '</div>';
+  });
+  hist.innerHTML='<div class="diario-history-title">Entradas anteriores</div>'+rows.join('');
+}
+
+function escHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ═══════════════════════════════════════
+// MÓDULO 3 — LIVRO DE CRÔNICAS
+// ═══════════════════════════════════════
+var CRONICAS_TEMPLATES=[
+  'Esta semana, algo foi constante: <em>você apareceu</em>.\nNão sempre da mesma forma. Não sempre com a mesma energia.\nMas a trilha foi percorrida.',
+  'Houve um ritmo nesta semana, mesmo que silencioso.\nAlgumas passadas mais pesadas. Outras mais leves.\nAinda assim, <em>o caminho avançou</em>.',
+  'A névoa esteve presente em alguns momentos.\nMas névoa não para jornadas.\n<em>Você continuou, mesmo sob ela</em>.',
+  'Há semanas em que a trilha some da vista por um momento.\nIsso também é parte do caminho.\n<em>O que importa é que você voltou</em>.',
+  'Esta semana carregou peso próprio.\nNem tudo precisou ser cumprido.\nApenas <em>estar presente já foi suficiente</em>.',
+  'Uma crônica não precisa de heróis.\nPrecisa apenas de alguém que <em>continua</em>.\nIsso é você, nesta semana.',
+  'O que fica depois de uma semana não são os números.\nÉ a <em>memória de ter escolhido cuidar</em> de si mesmo.',
+  'Cada semana da jornada tem seu próprio sabor.\nAlgumas amargas. Algumas doces. Todas <em>reais</em>.',
+  'Esta semana passou como passam as estações.\nCom o que ela tinha de bom e de difícil.\n<em>Você a atravessou inteira</em>.',
+  'Nenhuma semana é perdida enquanto a jornada continua.\nEsta também não.\n<em>Ela fez parte do caminho</em>.',
+  'Algumas palavras ficaram guardadas esta semana.\nAlgumas ações silenciosas também.\n<em>Tudo isso conta</em>.',
+  'O que o silêncio desta semana carregou\nsó você sabe nomear.\n<em>Isso é suficiente</em>.',
+];
+
+function getWeekKey(dateStr){
+  var d=new Date((dateStr||todayStr())+'T12:00:00');
+  var jan1=new Date(d.getFullYear(),0,1);
+  var week=Math.ceil(((d-jan1)/86400000+jan1.getDay()+1)/7);
+  return d.getFullYear()+'-W'+String(week).padStart(2,'0');
+}
+
+function checkAndGenerateCronica(){
+  var wk=getWeekKey(S.lastday||todayStr());
+  if((S.lastCronicaWeek||'')=== wk)return;
+  // Only generate if at least one day active this week
+  var days=Object.keys(S.wmap||{}).filter(function(d){return getWeekKey(d)===wk});
+  if(!days.length)return;
+  S.lastCronicaWeek=wk;
+  var hasWords=S.diary&&Object.keys(S.diary).some(function(d){return getWeekKey(d)===wk&&S.diary[d]&&S.diary[d].trim()});
+  // Prefer "palavras guardadas" template if diary used
+  var pool;
+  if(hasWords){
+    pool=CRONICAS_TEMPLATES.filter(function(t){return t.includes('guardadas')||t.includes('silêncio')});
+  } else {
+    pool=CRONICAS_TEMPLATES;
+  }
+  var text=pool[Math.floor(Math.random()*pool.length)];
+  if(!S.cronicas)S.cronicas=[];
+  // Avoid duplicate consecutive
+  var last=S.cronicas[S.cronicas.length-1];
+  if(last&&last.text===text){
+    var alt=CRONICAS_TEMPLATES.filter(function(t){return t!==text});
+    text=alt[Math.floor(Math.random()*alt.length)];
+  }
+  S.cronicas.push({week:wk,text:text,createdAt:todayStr()});
+  save();
+}
+
+function renderCronicas(){
+  var book=document.getElementById('cronicas-book');
+  if(!book)return;
+  checkAndGenerateCronica();
+  var all=(S.cronicas||[]).slice().reverse();
+  if(!all.length){
+    book.innerHTML='<div class="cronicas-empty">As crônicas desta jornada ainda estão sendo escritas.<br>Volte na próxima semana.</div>';
+    return;
+  }
+  book.innerHTML=all.map(function(c){
+    var wk=c.week||'';
+    var parts=wk.split('-W');
+    var label=parts.length===2?'Semana '+parts[1]+' · '+parts[0]:'';
+    // Convert newlines to <br> and keep em tags
+    var textHtml=escHtml(c.text).replace(/\n/g,'<br>').replace(/&lt;em&gt;/g,'<em>').replace(/&lt;\/em&gt;/g,'</em>');
+    return '<div class="cronica-page">'+
+      '<div class="cronica-week">'+escHtml(label)+'</div>'+
+      '<div class="cronica-text">'+textHtml+'</div>'+
+      '<div class="cronica-seal">— Trilha do Equilíbrio</div>'+
+      '</div>';
+  }).join('');
+}
+
 // BOOT
 // ═══════════════════════════════════════
 load();
@@ -1458,6 +1915,8 @@ if(S.firstRun){
   if(S.pendingComp&&!S.pendingComp._accepted&&!S._consecShown){
     setTimeout(()=>showFogConsequence(),2200);
   }
+  // Check for new cronica on boot
+  checkAndGenerateCronica();
 }
 </script>
 
